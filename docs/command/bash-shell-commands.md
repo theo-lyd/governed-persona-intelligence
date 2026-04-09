@@ -182,3 +182,17 @@
 - Expected output: Security baseline and validation workflow scaffolding.
 - Actual result: Success.
 - Notes: Implements Batch 0.1A Chunk 0.1.3 baseline.
+
+26.
+- Command: `env | grep '^SNOWFLAKE_'` and `command -v snow`
+- Purpose: Confirm runtime prerequisites before Batch 0.1B live validation.
+- Expected output: Configured Snowflake env vars and CLI path.
+- Actual result: No Snowflake env vars and no `snow` binary in current runtime.
+- Notes: Indicates validation cannot complete in this shell context.
+
+27.
+- Command: `bash scripts/security/run_access_matrix_checks.sh artifacts/security > artifacts/security/access-matrix-run.log 2>&1 || true`
+- Purpose: Attempt live access-matrix execution and capture artifact evidence.
+- Expected output: Access matrix text output on success.
+- Actual result: Failure message captured: `SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set`.
+- Notes: Artifact created for audit traceability.

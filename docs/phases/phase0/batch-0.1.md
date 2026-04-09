@@ -4,7 +4,7 @@
 - Phase: 0
 - Batch: 0.1
 - Title: Environment and Access Baseline
-- Status: In Progress
+- Status: In Progress (Blocked on runtime credentials)
 
 ## Technical Report
 ### What
@@ -40,9 +40,11 @@
 	- `docs/security/*`
 	- `scripts/security/*`
 - Test and validation evidence:
-	- Access-matrix validation scripts prepared; execution pending Snowflake credentials and account bindings.
+	- Access-matrix validation scripts prepared.
+	- Batch 0.1B execution attempted and logged at `docs/phases/phase0/evidence/access-matrix-run.txt`.
+	- Current run output: `SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set`.
 - Quality gate result:
-	- Partially met: policy and scaffolding complete, runtime validation pending secure credentials.
+	- Partially met: policy and scaffolding complete, runtime validation blocked pending secure credentials and snow CLI runtime availability.
 
 ## Non-Technical and Business Report
 ### What
@@ -67,7 +69,17 @@
 	- Engineering teams can now onboard with consistent toolchain and role model.
 - Risks and mitigations:
 	- Risk: credentials and account bindings not yet provisioned.
-	- Mitigation: explicit secrets and access runbook added in `docs/security/`.
+	- Mitigation: explicit secrets and access runbook added in `docs/security/`; live validation script and artifact capture path implemented.
+
+## Batch 0.1B Execution Note
+- Date: 2026-04-09
+- Action: attempted to run `scripts/security/run_access_matrix_checks.sh artifacts/security`.
+- Result: blocked because required Snowflake credentials are not set in environment.
+- Evidence artifact: `docs/phases/phase0/evidence/access-matrix-run.txt`.
+- Next action to close gate:
+	- Provide `SNOWFLAKE_ACCOUNT` and `SNOWFLAKE_USER` plus authentication credentials.
+	- Run access matrix script and attach resulting `artifacts/security/access-matrix.txt`.
+	- Capture platform/security sign-off record.
 
 ## Batch Completion Checklist
 - [x] Scope and objectives announced

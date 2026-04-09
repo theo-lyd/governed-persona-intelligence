@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if ! command -v snow >/dev/null 2>&1; then
+  echo "snow CLI is not installed or not on PATH"
+  exit 1
+fi
+
 if [[ -z "${SNOWFLAKE_ACCOUNT:-}" || -z "${SNOWFLAKE_USER:-}" ]]; then
   echo "SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set"
   exit 1
