@@ -4,7 +4,7 @@
 - Phase: 0
 - Batch: 0.1
 - Title: Environment and Access Baseline
-- Status: In Progress (Blocked on runtime credentials)
+- Status: Completed
 
 ## Technical Report
 ### What
@@ -42,12 +42,12 @@
 	- `docs/security/guides/workspace-novice-setup.md`
 	- `scripts/security/run_access_matrix_and_capture.sh`
 - Test and validation evidence:
-	- Access-matrix validation scripts prepared.
-	- Batch 0.1B execution attempted and logged at `docs/phases/phase0/evidence/access-matrix-run.txt`.
-	- Local follow-up capture command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
-	- Current run output: `SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set`.
+	- Access-matrix validation scripts prepared and executed successfully.
+	- Successful evidence captured at `docs/phases/phase0/evidence/access-matrix-run.txt`.
+	- Runtime artifact captured at `artifacts/security/access-matrix.txt`.
+	- Final capture command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`.
 - Quality gate result:
-	- Partially met: policy and scaffolding complete, runtime validation blocked pending secure credentials and snow CLI runtime availability.
+	- Met: policy, scaffolding, and runtime validation evidence complete.
 
 ## Non-Technical and Business Report
 ### What
@@ -76,13 +76,16 @@
 
 ## Batch 0.1B Execution Note
 - Date: 2026-04-09
-- Action: attempted to run `scripts/security/run_access_matrix_checks.sh artifacts/security`.
-- Result: blocked because required Snowflake credentials are not set in environment.
+- Action: executed `scripts/security/run_access_matrix_and_capture.sh artifacts/security` after Snowflake PAT auth and corrected object context.
+- Result: success.
 - Evidence artifact: `docs/phases/phase0/evidence/access-matrix-run.txt`.
-- Next action to close gate:
-	- Provide `SNOWFLAKE_ACCOUNT` and `SNOWFLAKE_USER` plus authentication credentials.
-	- Run `scripts/security/run_access_matrix_and_capture.sh` and attach resulting `docs/phases/phase0/evidence/access-matrix-run.txt`.
-	- Capture platform/security sign-off record.
+- Runtime artifact: `artifacts/security/access-matrix.txt`.
+- Validation snapshot:
+	- Current account: `FC43105`
+	- Current user: `THEO`
+	- Current role: `GPI_DEV_ADMIN`
+	- Current warehouse: `GPI_DEV_XS_WH`
+	- Current database/schema: `GPI_DEV.RAW`
 
 ## Batch Completion Checklist
 - [x] Scope and objectives announced
@@ -91,4 +94,4 @@
 - [x] Commit pushed
 - [x] Command logs updated
 - [x] Issues log updated
-- [ ] Acceptance criteria verified
+- [x] Acceptance criteria verified

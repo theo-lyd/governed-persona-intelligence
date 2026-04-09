@@ -15,6 +15,19 @@
 - Observed message: `SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set`
 - Closure condition: rerun with credentials and capture `artifacts/security/access-matrix.txt` output.
 
+### Resolution Update
+- Date resolved: 2026-04-09
+- Final auth path: programmatic access token from user profile.
+- Additional blockers resolved during execution:
+	- SAML externalbrowser mismatch for CLI path.
+	- Network policy allowlist requirement for Codespaces egress IP.
+	- Warehouse/database naming mismatch (`WH_GOVERNED_*` vs `GPI_*`).
+	- Placeholder SQL tokens causing compile error.
+- Final evidence:
+	- `artifacts/security/access-matrix.txt`
+	- `docs/phases/phase0/evidence/access-matrix-run.txt`
+- Final status: Closed.
+
 ## Template
 - Issue title:
 - Batch:
