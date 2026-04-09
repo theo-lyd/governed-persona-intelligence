@@ -260,6 +260,13 @@
 - Actual result: Success, monitor spec PASS, evaluator output (`success_rate=0.0000`, `five_consecutive_success=false`), and `8 passed`.
 - Notes: Live monitor API calls are intentionally out of scope for local test execution.
 
+37.
+- Command: `python scripts/ingestion/airbyte/evaluate_load_success.py`
+- Purpose: Re-evaluate completion criteria after live-activation attempt sequence.
+- Expected output: >=99% success and five-consecutive-success true once live runs are captured.
+- Actual result: `total_runs=1`, `passed_runs=0`, `success_rate=0.0000`, `five_consecutive_success=false`.
+- Notes: Confirms Batch I.1 cannot be closed until live run evidence is populated.
+
 34.
 - Command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
 - Purpose: Reconfirm the access-matrix capture path after the Phase 0 closure baseline.

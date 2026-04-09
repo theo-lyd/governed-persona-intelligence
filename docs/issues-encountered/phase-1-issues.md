@@ -17,3 +17,11 @@
 - Scope: Monte Carlo monitor specifications, activation evidence templates, and load-success evaluation utility.
 - Result: Completed without code blockers.
 - Notes: Full quality-gate sign-off remains dependent on live monitor activation and five consecutive ingestion runs in the target environment.
+
+## Live Activation Blocker (I.1 closure)
+- Date: 2026-04-09
+- What happened: Attempted to execute live activation prechecks for Airbyte rendering and Monte Carlo API connectivity.
+- Root cause: Required runtime environment credentials/endpoints were not available in this workspace (`AIRBYTE_*`, `AWS_*`, `MONTE_CARLO_*`).
+- Impact: Cannot complete connector creation, monitor API registration, or capture 5 consecutive successful live runs.
+- Mitigation in place: Fail-fast template rendering now blocks unsafe empty-value config generation.
+- Next action: provide runtime secrets/endpoints and rerun activation steps to close Batch I.1.

@@ -17,6 +17,31 @@ fi
 template_dir="$1"
 output_dir="$2"
 
+if [[ ! -d "$template_dir" ]]; then
+  echo "Template directory not found: $template_dir" >&2
+  exit 1
+fi
+
+# Collect required placeholders from templates and fail if any env var is missing.
+mapfile -t required_vars < <(
+  grep -rho '\${[A-Z0-9_][A-Z0-9_]*}' "$template_dir"/*.template.json \
+    | sed -E 's/^\$\{([A-Z0-9_]+)\}$/\1/' \
+    | sort -u
+)
+
+missing_vars=()
+for var_name in "${required_vars[@]}"; do
+  if [[ -z "${!var_name:-}" ]]; then
+    missing_vars+=("$var_name")
+  fi
+done
+
+if [[ ${#missing_vars[@]} -gt 0 ]]; then
+  echo "Missing required environment variables:" >&2
+  printf ' - %s\n' "${missing_vars[@]}" >&2
+  exit 1
+fi
+
 mkdir -p "$output_dir"
 
 for template in "$template_dir"/*.template.json; do
