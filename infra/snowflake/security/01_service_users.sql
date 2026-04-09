@@ -1,0 +1,23 @@
+-- Phase 0 / Batch 0.1 / Chunk 0.1.3 baseline
+-- Create service users for orchestration and transformations.
+-- Passwords/private keys must be provisioned from a secrets manager.
+
+USE ROLE SECURITYADMIN;
+
+CREATE USER IF NOT EXISTS <ORG_PREFIX>_AIRBYTE_SVC
+  LOGIN_NAME = '<ORG_PREFIX>_AIRBYTE_SVC'
+  DISPLAY_NAME = 'Airbyte Service User'
+  MUST_CHANGE_PASSWORD = FALSE
+  DISABLED = FALSE;
+
+CREATE USER IF NOT EXISTS <ORG_PREFIX>_AIRFLOW_SVC
+  LOGIN_NAME = '<ORG_PREFIX>_AIRFLOW_SVC'
+  DISPLAY_NAME = 'Airflow Service User'
+  MUST_CHANGE_PASSWORD = FALSE
+  DISABLED = FALSE;
+
+CREATE USER IF NOT EXISTS <ORG_PREFIX>_DBT_SVC
+  LOGIN_NAME = '<ORG_PREFIX>_DBT_SVC'
+  DISPLAY_NAME = 'dbt Service User'
+  MUST_CHANGE_PASSWORD = FALSE
+  DISABLED = FALSE;
