@@ -593,26 +593,26 @@
 - Command: `git status --short`
 - Purpose: Review live-activation attempt and blocker-documentation changes before staging.
 - Expected output: Modified/new files for I.1 closure attempt listed.
-- Actual result: Pending.
+- Actual result: Success, modified command logs, phase docs, issues log, and renderer script were listed.
 - Notes: Pre-commit validation for live-activation follow-up batch.
 
 85.
 - Command: `git add scripts/ingestion/airbyte/render_templates.sh docs/phases/phase1/batch-1.1.md docs/phases/phase1/evidence/i1c-monitor-activation.md docs/issues-encountered/phase-1-issues.md docs/command/airbyte-commands.md docs/command/monte-carlo-commands.md docs/command/bash-shell-commands.md docs/command/git-commands.md`
 - Purpose: Stage blocker-handling hardening and governance evidence updates for Batch I.1 closure attempt.
 - Expected output: No output on success.
-- Actual result: Pending.
+- Actual result: Success.
 - Notes: Single staging set for atomic publish.
 
 86.
 - Command: `git commit -m "docs: record i1 live activation blocker and safeguards | why: keep phase closure state accurate and prevent unsafe template renders"`
 - Purpose: Publish live-activation attempt outcomes and mitigations.
 - Expected output: Commit hash and file summary.
-- Actual result: Pending.
+- Actual result: Success, commit `dba26e3` created with 8 files changed.
 - Notes: Message includes explicit why rationale.
 
 87.
 - Command: `git push origin master`
 - Purpose: Publish live-activation follow-up commit.
 - Expected output: Remote branch updated.
-- Actual result: Pending.
+- Actual result: Success, remote updated `bae28cc..dba26e3`.
 - Notes: Required by standing instructions.
