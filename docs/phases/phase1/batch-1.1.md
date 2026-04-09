@@ -4,7 +4,7 @@
 - Phase: I
 - Batch: I.1
 - Title: Airbyte Ingestion and Raw Landing
-- Status: In Progress (I.1A and I.1B Completed)
+- Status: In Progress (I.1A, I.1B, and I.1C Scaffolding Completed)
 
 ## Technical Report
 ### What
@@ -13,6 +13,7 @@
 - Added raw landing Snowflake DDL with required lineage metadata columns.
 - Implemented I.1B connector and validation scaffolding with Airbyte template definitions.
 - Added source-vs-landing reconciliation SQL and drift-policy validation script.
+- Implemented I.1C observability and completion-evidence scaffolding for freshness, volume, and run-success tracking.
 
 ### How
 - Created contract definitions in `src/ingestion/airbyte/contracts/` with required and optional field declarations plus drift policies.
@@ -22,6 +23,9 @@
 - Added reconciliation query in `src/ingestion/airbyte/sql/01_reconciliation_checks.sql`.
 - Added drift-policy validation helper in `scripts/ingestion/airbyte/validate_drift_policy.py` and template renderer in `scripts/ingestion/airbyte/render_templates.sh`.
 - Added unit tests in `tests/unit/test_phase1_ingestion_i1b.py` and executed both Phase I test modules.
+- Added Monte Carlo monitor specs in `src/observability/monte_carlo/phase1/raw_ingestion_monitors.yaml`.
+- Added monitor spec validator in `scripts/observability/monte_carlo/validate_phase1_monitor_specs.py`.
+- Added load success evaluator in `scripts/ingestion/airbyte/evaluate_load_success.py` and evidence templates in `docs/phases/phase1/evidence/`.
 
 ### Why
 - Choice: establish contract-first ingestion design before connector orchestration.
@@ -47,13 +51,23 @@
 	- `infra/snowflake/ingestion/01_raw_landing.sql`
 	- `tests/unit/test_phase1_ingestion_contracts.py`
 	- `tests/unit/test_phase1_ingestion_i1b.py`
+	- `src/observability/monte_carlo/phase1/README.md`
+	- `src/observability/monte_carlo/phase1/raw_ingestion_monitors.yaml`
+	- `scripts/observability/monte_carlo/validate_phase1_monitor_specs.py`
+	- `scripts/ingestion/airbyte/evaluate_load_success.py`
+	- `docs/phases/phase1/evidence/i1c-monitor-activation.md`
+	- `docs/phases/phase1/evidence/i1c-load-success-runs.csv`
+	- `tests/unit/test_phase1_ingestion_i1c.py`
 - Test and validation evidence:
 	- `python -m pytest -q tests/unit/test_phase1_ingestion_contracts.py`
 	- `bash -n scripts/ingestion/airbyte/render_templates.sh`
 	- `python scripts/ingestion/airbyte/validate_drift_policy.py`
 	- `python -m pytest -q tests/unit/test_phase1_ingestion_contracts.py tests/unit/test_phase1_ingestion_i1b.py`
+	- `python scripts/observability/monte_carlo/validate_phase1_monitor_specs.py`
+	- `python scripts/ingestion/airbyte/evaluate_load_success.py`
+	- `python -m pytest -q tests/unit/test_phase1_ingestion_contracts.py tests/unit/test_phase1_ingestion_i1b.py tests/unit/test_phase1_ingestion_i1c.py`
 - Quality gate result:
-	- In progress: contract, connector templates, and reconciliation/drift validation baseline implemented; monitor activation and live run evidence pending I.1C.
+	- In progress: contract, connector templates, reconciliation/drift checks, and monitor specs are implemented; live monitor activation and 5-run success evidence remain pending external runtime execution.
 
 ## Non-Technical and Business Report
 ### What
@@ -74,13 +88,15 @@
 	- Mitigation: enforce contract review checkpoint and template validation in I.1B.
 	- Risk: template placeholders may be deployed without secret resolution.
 	- Mitigation: require environment rendering via `scripts/ingestion/airbyte/render_templates.sh` in deployment workflows.
+	- Risk: monitor specs may exist without active alert routing.
+	- Mitigation: enforce completion of `docs/phases/phase1/evidence/i1c-monitor-activation.md` before declaring I.1 complete.
 
 ## Batch Completion Checklist
 - [x] Scope and objectives announced
 - [x] User approval received before execution
 - [ ] Atomic commit completed
 - [ ] Commit pushed
-- [ ] Command logs updated
+- [x] Command logs updated
 - [x] Command logs updated
 - [x] Issues log updated
 - [ ] Acceptance criteria verified

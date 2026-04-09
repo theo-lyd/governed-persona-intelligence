@@ -253,6 +253,13 @@
 - Actual result: Success, drift policy PASS and `5 passed`.
 - Notes: Confirms I.1A + I.1B scaffolding quality before live connector execution.
 
+36.
+- Command: `python scripts/observability/monte_carlo/validate_phase1_monitor_specs.py && python scripts/ingestion/airbyte/evaluate_load_success.py && python -m pytest -q tests/unit/test_phase1_ingestion_contracts.py tests/unit/test_phase1_ingestion_i1b.py tests/unit/test_phase1_ingestion_i1c.py`
+- Purpose: Validate I.1C monitor specifications, load-success evaluator utility, and full Phase I ingestion unit test set.
+- Expected output: PASS monitor validation, evaluator metrics output, and all tests passing.
+- Actual result: Success, monitor spec PASS, evaluator output (`success_rate=0.0000`, `five_consecutive_success=false`), and `8 passed`.
+- Notes: Live monitor API calls are intentionally out of scope for local test execution.
+
 34.
 - Command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
 - Purpose: Reconfirm the access-matrix capture path after the Phase 0 closure baseline.

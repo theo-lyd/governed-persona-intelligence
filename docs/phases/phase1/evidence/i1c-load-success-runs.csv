@@ -1,0 +1,2 @@
+run_id,executed_at,status,source_records,landed_records,notes
+run-001,2026-04-09T00:00:00Z,PENDING,0,0,Template row replace after live ingestion run

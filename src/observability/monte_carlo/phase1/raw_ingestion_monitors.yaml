@@ -1,0 +1,43 @@
+version: 1
+owner: data-platform
+environment: dev
+monitors:
+  - id: mc_phase1_raw_web_events_freshness
+    type: freshness
+    table: GPI_DEV.RAW.RAW_WEB_EVENTS_JSON
+    column: _ingest_ts
+    schedule: hourly
+    warn_after_minutes: 90
+    error_after_minutes: 120
+    description: Alert when web event landing stops or is delayed.
+
+  - id: mc_phase1_raw_web_events_volume
+    type: volume
+    table: GPI_DEV.RAW.RAW_WEB_EVENTS_JSON
+    schedule: hourly
+    comparison_window_days: 7
+    warn_pct_drop: 30
+    error_pct_drop: 50
+    warn_pct_spike: 50
+    error_pct_spike: 100
+    description: Detect abnormal web-event ingest count shifts.
+
+  - id: mc_phase1_raw_transactions_freshness
+    type: freshness
+    table: GPI_DEV.RAW.RAW_TRANSACTIONS_CSV
+    column: _ingest_ts
+    schedule: hourly
+    warn_after_minutes: 120
+    error_after_minutes: 180
+    description: Alert when transaction ingest is stale.
+
+  - id: mc_phase1_raw_transactions_volume
+    type: volume
+    table: GPI_DEV.RAW.RAW_TRANSACTIONS_CSV
+    schedule: hourly
+    comparison_window_days: 7
+    warn_pct_drop: 25
+    error_pct_drop: 40
+    warn_pct_spike: 40
+    error_pct_spike: 80
+    description: Detect transaction ingest anomalies.

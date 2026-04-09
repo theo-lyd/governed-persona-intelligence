@@ -51,9 +51,9 @@ Phase 0 sign-off:
 ## Phase I: Governed Ingestion and Flexible Schema
 
 ### Batch I.1 Airbyte Ingestion and Raw Landing
-- [ ] Chunk I.1.1 Event contracts defined (JSON/CSV required/optional/drift)
+- [x] Chunk I.1.1 Event contracts defined (JSON/CSV required/optional/drift)
 - [ ] Chunk I.1.2 Airbyte connectors configured to Snowflake raw landing
-- [ ] Chunk I.1.3 Ingestion metadata columns implemented (`_ingest_ts`, `_source_file`, `_load_id`)
+- [x] Chunk I.1.3 Ingestion metadata columns implemented (`_ingest_ts`, `_source_file`, `_load_id`)
 - [ ] Quality gate passed (freshness/volume baselines and schema drift behavior verified)
 - [ ] Validation evidence attached (count reconciliation and live monitors)
 - [ ] Completion criteria met (>=99% success across 5 consecutive runs)
