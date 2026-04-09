@@ -5,7 +5,7 @@ Resolve the current Phase I.1 live-activation blocker by providing the required 
 
 ## Blocker Summary
 Batch I.1 cannot be closed while these are missing in the runtime environment:
-- Airbyte connector and destination credentials (`AIRBYTE_*` and `AWS_*` variables)
+- Airbyte connector and destination credentials (`AIRBYTE_*` and `AZURE_*` variables)
 - Monte Carlo API endpoint/token (`MONTE_CARLO_API_BASE_URL`, `MONTE_CARLO_API_TOKEN`)
 - Source endpoint/API values for ingestion templates
 
@@ -14,18 +14,17 @@ Batch I.1 cannot be closed while these are missing in the runtime environment:
 ### Airbyte and source systems
 - `AIRBYTE_WORKSPACE_ID`
 - `AIRBYTE_SOURCE_DEF_HTTP_API_ID`
-- `AIRBYTE_SOURCE_DEF_S3_ID`
+- `AIRBYTE_SOURCE_DEF_AZURE_BLOB_ID`
 - `AIRBYTE_DEST_DEF_SNOWFLAKE_ID`
 - `AIRBYTE_WEB_EVENTS_SOURCE_ID` (if updating existing source)
 - `AIRBYTE_TRANSACTIONS_SOURCE_ID` (if updating existing source)
 - `AIRBYTE_SNOWFLAKE_DESTINATION_ID` (if updating existing destination)
 - `WEB_EVENTS_ENDPOINT`
 - `WEB_EVENTS_API_KEY`
-- `TRANSACTION_BUCKET`
+- `TRANSACTION_CONTAINER`
 - `TRANSACTION_PREFIX`
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
-- `AWS_REGION`
+- `AZURE_STORAGE_ACCOUNT_NAME`
+- `AZURE_STORAGE_ACCOUNT_KEY`
 - `SOURCE_NAMESPACE`
 
 ### Snowflake destination

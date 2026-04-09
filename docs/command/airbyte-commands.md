@@ -33,5 +33,12 @@
 - Command: `bash scripts/ingestion/airbyte/render_templates.sh src/ingestion/airbyte/config artifacts/airbyte/rendered`
 - Purpose: Execute live activation template rendering before Airbyte API creation calls.
 - Expected output: Rendered runtime connector payloads for source, destination, and connections.
-- Actual result: Failed fast due to missing required environment variables (`AIRBYTE_*`, `AWS_*`, `SNOWFLAKE_HOST`, source endpoint variables).
+- Actual result: Failed fast due to missing required environment variables (`AIRBYTE_*`, `AZURE_*`, `SNOWFLAKE_HOST`, source endpoint variables).
 - Notes: Activation blocked until runtime secrets/endpoints are provided.
+
+5.
+- Command: `bash scripts/ingestion/airbyte/render_templates.sh src/ingestion/airbyte/config artifacts/airbyte/rendered`
+- Purpose: Re-validate variable requirements after migrating transaction source placeholders from AWS to Azure naming.
+- Expected output: Missing-variable list should reference Azure-specific placeholders.
+- Actual result: Success for validation objective; missing list now references `AIRBYTE_SOURCE_DEF_AZURE_BLOB_ID`, `AZURE_STORAGE_ACCOUNT_NAME`, `AZURE_STORAGE_ACCOUNT_KEY`, and `TRANSACTION_CONTAINER`.
+- Notes: Confirms end-to-end migration from AWS to Azure placeholder naming.

@@ -1,9 +1,9 @@
 {
   "name": "gpi-transactions-csv",
-  "sourceDefinitionId": "${AIRBYTE_SOURCE_DEF_S3_ID}",
+  "sourceDefinitionId": "${AIRBYTE_SOURCE_DEF_AZURE_BLOB_ID}",
   "workspaceId": "${AIRBYTE_WORKSPACE_ID}",
   "connectionConfiguration": {
-    "bucket": "${TRANSACTION_BUCKET}",
+    "container": "${TRANSACTION_CONTAINER}",
     "path_prefix": "${TRANSACTION_PREFIX}",
     "format": {
       "filetype": "csv",
@@ -12,9 +12,8 @@
       "has_header": true
     },
     "provider": {
-      "access_key_id": "${AWS_ACCESS_KEY_ID}",
-      "secret_access_key": "${AWS_SECRET_ACCESS_KEY}",
-      "region": "${AWS_REGION}"
+      "account_name": "${AZURE_STORAGE_ACCOUNT_NAME}",
+      "account_key": "${AZURE_STORAGE_ACCOUNT_KEY}"
     }
   }
 }

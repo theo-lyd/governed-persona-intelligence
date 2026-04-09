@@ -301,3 +301,10 @@
 - Expected output: All selected test modules pass.
 - Actual result: Success, `11 passed`.
 - Notes: Confirms cleanup did not regress Phase 0/Phase I validation behavior.
+
+39.
+- Command: `python -m pytest -q tests/unit/test_phase1_ingestion_i1b.py tests/unit/test_phase1_ingestion_i1c.py`
+- Purpose: Run focused regression tests after migrating Airbyte transaction placeholders from AWS to Azure naming.
+- Expected output: Both test modules pass.
+- Actual result: Success, `6 passed`.
+- Notes: Confirms I.1B/I.1C validation logic remains stable after placeholder migration.
