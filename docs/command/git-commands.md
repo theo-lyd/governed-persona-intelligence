@@ -320,26 +320,26 @@
 - Command: `git status --short`
 - Purpose: Verify pending changes before publishing Batch 0.1A commit 3.
 - Expected output: Modified/new files listed.
-- Actual result: Pending execution.
+- Actual result: Success, modified/new files listed for security and batch-report updates.
 - Notes: Pre-commit validation.
 
 46.
 - Command: `git add .env.example docs/security scripts/security docs/phases/phase0/batch-0.1.md docs/issues-encountered/phase-0-issues.md README.md docs/command/git-commands.md docs/command/bash-shell-commands.md`
 - Purpose: Stage security/access templates, validation scripts, and phase report updates.
 - Expected output: No output on success.
-- Actual result: Pending execution.
+- Actual result: Success.
 - Notes: Batch 0.1A commit 3 payload.
 
 47.
 - Command: `git commit -m "docs: add phase0 security baseline and validation scaffolding | why: operationalize least-privilege and access evidence workflow"`
 - Purpose: Publish Batch 0.1A commit 3.
 - Expected output: Commit hash and changed files summary.
-- Actual result: Pending execution.
+- Actual result: Success, commit `19533d4` created.
 - Notes: Atomic commit includes why rationale.
 
 48.
 - Command: `git push origin master`
 - Purpose: Publish Batch 0.1A commit 3.
 - Expected output: Remote branch updated.
-- Actual result: Pending execution.
+- Actual result: Success, remote updated `297727b..19533d4`.
 - Notes: Required by standing instructions.

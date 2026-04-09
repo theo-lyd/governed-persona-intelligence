@@ -74,6 +74,6 @@
 - [x] User approval received before execution
 - [x] Atomic commit completed
 - [x] Commit pushed
-- [ ] Command logs updated
-- [ ] Issues log updated
+- [x] Command logs updated
+- [x] Issues log updated
 - [ ] Acceptance criteria verified
