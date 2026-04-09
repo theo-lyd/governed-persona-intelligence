@@ -649,26 +649,26 @@
 - Command: `git status --short`
 - Purpose: Review Azure variable-name migration changes before staging.
 - Expected output: Modified files for template and documentation updates listed.
-- Actual result: Pending.
+- Actual result: Success, template and docs/log files were listed.
 - Notes: Pre-commit validation for cloud-alignment batch.
 
 93.
 - Command: `git add src/ingestion/airbyte/config/source_transactions.template.json docs/security/phase1-live-activation-runbook.md docs/command/airbyte-commands.md docs/issues-encountered/phase-1-issues.md docs/command/bash-shell-commands.md docs/command/git-commands.md`
 - Purpose: Stage Airbyte placeholder migration and related governance updates.
 - Expected output: No output on success.
-- Actual result: Pending.
+- Actual result: Success.
 - Notes: Single staging step for atomic publish.
 
 94.
 - Command: `git commit -m "docs: align airbyte variables to azure naming | why: match runtime cloud configuration and reduce activation confusion"`
 - Purpose: Publish Azure variable-name alignment across templates and docs.
 - Expected output: Commit hash and changed-files summary.
-- Actual result: Pending.
+- Actual result: Success, commit `f38819a` created with 6 files changed.
 - Notes: Commit message includes required why rationale.
 
 95.
 - Command: `git push origin master`
 - Purpose: Publish Azure naming alignment commit.
 - Expected output: Remote branch updated.
-- Actual result: Pending.
+- Actual result: Success, remote updated `f2d2f40..f38819a`.
 - Notes: Required by standing instructions.
