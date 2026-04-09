@@ -201,6 +201,9 @@ cython_debug/
 
 # Generated runtime artifacts from local validation runs
 /artifacts/
+
+# dbt local user state
+/.github/dbt/.user.yml
 .cursorignore
 .cursorindexingignore
 
