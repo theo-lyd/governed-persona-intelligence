@@ -4,7 +4,7 @@
 - Phase: 0
 - Batch: 0.2
 - Title: Delivery Guardrails and CI Skeleton
-- Status: In Progress
+- Status: Completed
 
 ## Technical Report
 ### What
@@ -25,13 +25,22 @@
 
 ### Output
 - Code/data artifacts produced:
-	- Phase 0 Batch 0.2 report scaffolded with concrete gate items.
+	- `.github/workflows/phase0-ci.yml` with path-filtered CI jobs for lint, unit tests, dbt parse, clone-plan, and release-tag validation.
+	- `scripts/ci/lint.sh`, `scripts/ci/pr_clone_plan.sh`, and `scripts/ci/check_release_tag.sh`.
+	- `dbt/phase0/dbt_project.yml`, `dbt/phase0/models/phase0_healthcheck.sql`, and `.github/dbt/profiles.yml`.
+	- `docs/governance/phase0-ci-guardrails.md` documenting branch protection and release conventions.
 	- `.gitignore` updated to exclude generated runtime artifacts.
 - Test and validation evidence:
-	- Phase 0 Batch 0.1 access matrix evidence already captured in `docs/phases/phase0/evidence/access-matrix-run.txt`.
-	- Runtime report available in `artifacts/security/access-matrix.txt` for local inspection.
+- Lint and helper validation evidence:
+	- `bash -n scripts/ci/lint.sh scripts/ci/pr_clone_plan.sh scripts/ci/check_release_tag.sh`
+	- `bash scripts/ci/pr_clone_plan.sh --pr-number 42 --source-database GPI_DEV --source-schema RAW --output /tmp/pr-clone-plan.sql`
+	- `bash scripts/ci/check_release_tag.sh phase0-b0.2-20260409`
+	- `bash scripts/ci/check_release_tag.sh v0.2.0-rc.1`
+	- `python -m pytest -q tests/unit/test_phase0_ci_policy.py` (`3 passed`)
+	- `dbt parse --project-dir dbt/phase0 --profiles-dir .github/dbt --profile phase0_ci`
+	- `python - <<'PY' ... yaml.safe_load(Path('.github/workflows/phase0-ci.yml').read_text()) ... PY`
 - Quality gate result:
-	- Ready to begin Chunk 0.2.1 after evidence-based baseline sign-off.
+	- Met: CI skeleton, clone-plan helper, and release-tag convention all validated locally.
 
 ## Non-Technical and Business Report
 ### What
@@ -50,11 +59,18 @@
 - Adoption and operational outcome: developers get a deterministic check path before Phase I work begins.
 - Risks and mitigations: CI guardrails may lag behind feature work; keep the batch small and gate each chunk explicitly.
 
+## Batch 0.2 Execution Note
+- Date: 2026-04-09
+- Action: implemented GitHub Actions CI skeleton, PR clone-plan helper, release-tag validator, and dbt parse scaffold.
+- Result: success.
+- Validation artifacts: local command output and unit test pass captured in the command logs.
+- Next action: begin the first PR dry-run against the clone-plan workflow and review branch protection settings in GitHub.
+
 ## Batch Completion Checklist
 - [x] Scope and objectives announced
-- [ ] User approval received before execution
-- [ ] Atomic commit completed
-- [ ] Commit pushed
-- [ ] Command logs updated
-- [ ] Issues log updated
-- [ ] Acceptance criteria verified
+- [x] User approval received before execution
+- [x] Atomic commit completed
+- [x] Commit pushed
+- [x] Command logs updated
+- [x] Issues log updated
+- [x] Acceptance criteria verified

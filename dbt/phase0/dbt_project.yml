@@ -1,0 +1,25 @@
+name: phase0_ci
+version: '1.0'
+config-version: 2
+profile: phase0_ci
+
+model-paths:
+  - models
+
+macro-paths:
+  - macros
+
+seed-paths:
+  - seeds
+
+test-paths:
+  - tests
+
+target-path: target
+clean-targets:
+  - target
+  - dbt_packages
+
+models:
+  phase0_ci:
+    +materialized: view

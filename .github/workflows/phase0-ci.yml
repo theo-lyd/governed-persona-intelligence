@@ -1,0 +1,128 @@
+name: Phase 0 CI
+
+on:
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Release tag to validate against the Phase 0 convention.
+        required: false
+        default: phase0-b0.2-20260409
+
+permissions:
+  contents: read
+
+jobs:
+  classify_changes:
+    runs-on: ubuntu-latest
+    outputs:
+      lint: ${{ steps.filter.outputs.lint }}
+      unit: ${{ steps.filter.outputs.unit }}
+      dbt: ${{ steps.filter.outputs.dbt }}
+      clone: ${{ steps.filter.outputs.clone }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect impacted areas
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          token: ${{ github.token }}
+          filters: |
+            lint:
+              - 'scripts/**/*.sh'
+              - '.github/workflows/**/*.yml'
+              - '.github/dbt/**/*.yml'
+              - 'tests/**/*.py'
+            unit:
+              - 'tests/**/*.py'
+              - 'scripts/ci/**/*.sh'
+            dbt:
+              - 'dbt/**'
+              - 'src/transformation/dbt/**'
+            clone:
+              - 'scripts/ci/pr_clone_plan.sh'
+              - 'scripts/security/**'
+              - 'infra/snowflake/**'
+              - 'docs/security/**'
+
+  lint:
+    needs: classify_changes
+    if: needs.classify_changes.outputs.lint == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+
+      - name: Run repository lint
+        run: bash scripts/ci/lint.sh
+
+  unit-tests:
+    needs: classify_changes
+    if: needs.classify_changes.outputs.unit == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+
+      - name: Execute unit tests
+        run: pytest -q
+
+  dbt-parse:
+    needs: classify_changes
+    if: needs.classify_changes.outputs.dbt == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dbt tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install dbt-core dbt-snowflake
+
+      - name: Parse the Phase 0 dbt scaffold
+        env:
+          DBT_PROFILES_DIR: .github/dbt
+        run: dbt parse --project-dir dbt/phase0 --profiles-dir .github/dbt --profile phase0_ci
+
+  clone-plan:
+    needs: classify_changes
+    if: needs.classify_changes.outputs.clone == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render PR validation clone plan
+        run: |
+          bash scripts/ci/pr_clone_plan.sh \
+            --pr-number "${{ github.event.pull_request.number || 0 }}" \
+            --source-database "GPI_DEV" \
+            --source-schema "RAW" \
+            --output /tmp/pr-clone-plan.sql
+
+      - name: Validate release tag convention
+        run: bash scripts/ci/check_release_tag.sh "${{ github.event.inputs.release_tag || 'phase0-b0.2-20260409' }}"

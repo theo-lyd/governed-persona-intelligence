@@ -245,3 +245,24 @@
 - Expected output: Runtime report and tracked evidence copy.
 - Actual result: Success earlier in the batch, evidenced in `docs/phases/phase0/evidence/access-matrix-run.txt`.
 - Notes: Forms the evidence baseline for starting Phase 0 Batch 0.2.
+
+35.
+- Command: `bash -n scripts/ci/lint.sh scripts/ci/pr_clone_plan.sh scripts/ci/check_release_tag.sh`
+- Purpose: Validate the new CI helper scripts before committing Batch 0.2.
+- Expected output: No shell syntax errors.
+- Actual result: Success.
+- Notes: Ensures the Batch 0.2 helper scripts are safe to run in CI.
+
+36.
+- Command: `bash scripts/ci/check_release_tag.sh phase0-b0.2-20260409`
+- Purpose: Validate the batch evidence tag convention.
+- Expected output: Tag accepted as a batch evidence tag.
+- Actual result: Success.
+- Notes: Confirms the documented Phase 0 batch tag format.
+
+37.
+- Command: `bash scripts/ci/check_release_tag.sh v0.2.0-rc.1`
+- Purpose: Validate the semantic release tag convention.
+- Expected output: Tag accepted as a prerelease semantic version.
+- Actual result: Success.
+- Notes: Confirms the release tag validator accepts the documented format.

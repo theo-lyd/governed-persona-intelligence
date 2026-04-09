@@ -37,3 +37,12 @@
 - How implemented:
 - How to avoid in future:
 - Lesson learned:
+
+## Batch 0.2: Delivery Guardrails and CI Skeleton
+- Batch: 0.2
+- What happened: CI skeleton, zero-copy clone planning, and release-tag validation were implemented and validated locally.
+- Root cause: N/A - this was planned foundation work rather than a blocker-driven issue.
+- Solution: Added path-filtered GitHub Actions workflow, dbt parse scaffold, PR clone-plan helper, and release-tag validator.
+- How implemented: Workflow and helper scripts were added under `.github/workflows/` and `scripts/ci/`, with validation-backed unit tests.
+- How to avoid in future: Keep CI skeleton changes small and validate shell, pytest, and dbt parse in the same batch.
+- Lesson learned: A clean access baseline makes CI guardrail work easier to validate and document.

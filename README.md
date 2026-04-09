@@ -66,6 +66,9 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 - Project presentation (non-technical): [docs/project-presentation-nontechnical.md](docs/project-presentation-nontechnical.md)
 - Project walkthrough: [docs/project-walkthrough.md](docs/project-walkthrough.md)
 - Project runbook: [docs/project-runbook.md](docs/project-runbook.md)
+- Phase 0 Batch 0.1 report: [docs/phases/phase0/batch-0.1.md](docs/phases/phase0/batch-0.1.md)
+- Phase 0 Batch 0.2 report: [docs/phases/phase0/batch-0.2.md](docs/phases/phase0/batch-0.2.md)
+- Phase 0 CI guardrails: [docs/governance/phase0-ci-guardrails.md](docs/governance/phase0-ci-guardrails.md)
 
 ## Quick-Start Commands
 ```bash

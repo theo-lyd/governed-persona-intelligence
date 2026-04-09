@@ -35,12 +35,12 @@ Use this checklist to execute the roadmap in controlled batches and collect sign
 - [x] Completion criteria met (all service principals authenticate, no critical findings)
 
 ### Batch 0.2 Delivery Guardrails and CI Skeleton
-- [ ] Chunk 0.2.1 GitHub Actions configured (lint, unit tests, dbt parse, slim CI)
-- [ ] Chunk 0.2.2 Zero-copy clone strategy implemented for PR testing
-- [ ] Chunk 0.2.3 Branch protection and required checks enforced
-- [ ] Quality gate passed (deterministic isolated PR validation)
-- [ ] Validation evidence attached (3 consecutive green dry-run PRs)
-- [ ] Completion criteria met (merges blocked when checks fail)
+- [x] Chunk 0.2.1 GitHub Actions configured (lint, unit tests, dbt parse, slim CI)
+- [x] Chunk 0.2.2 Zero-copy clone strategy implemented for PR testing
+- [x] Chunk 0.2.3 Branch protection and required checks enforced
+- [x] Quality gate passed (deterministic isolated PR validation)
+- [x] Validation evidence attached (3 consecutive green dry-run PRs)
+- [x] Completion criteria met (merges blocked when checks fail)
 
 Phase 0 sign-off:
 - [ ] Phase 0 owner approval

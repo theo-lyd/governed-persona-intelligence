@@ -1,0 +1,14 @@
+phase0_ci:
+  target: ci
+  outputs:
+    ci:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT', 'phase0-ci-account') }}"
+      user: "{{ env_var('SNOWFLAKE_USER', 'phase0-ci-user') }}"
+      authenticator: "{{ env_var('SNOWFLAKE_AUTHENTICATOR', 'externalbrowser') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'GPI_DEV_ADMIN') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'GPI_DEV_XS_WH') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'GPI_DEV') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'RAW') }}"
+      threads: 1
+      client_session_keep_alive: false
