@@ -4,8 +4,8 @@
 - Batch: 0.1
 - What happened: Access-matrix scripts are ready, but live execution is blocked due to unavailable Snowflake account credentials in this workspace.
 - Root cause: Secret values and account-level service users are not provisioned in this environment yet.
-- Solution: Added `docs/security/secrets-management.md`, `.env.example`, and script scaffolding for deterministic validation once secrets are configured.
-- How implemented: Created `scripts/security/access_matrix_checks.sql` and `scripts/security/run_access_matrix_checks.sh` to generate evidence artifacts.
+- Solution: Added `docs/security/secrets-management.md`, `.env.example`, a novice Workspace setup guide, and script scaffolding for deterministic validation once secrets are configured.
+- How implemented: Created `scripts/security/access_matrix_checks.sql`, `scripts/security/run_access_matrix_checks.sh`, `scripts/security/run_access_matrix_and_capture.sh`, and `docs/security/guides/workspace-novice-setup.md` to generate, capture, and explain the evidence workflow.
 - How to avoid in future: Ensure security onboarding checklist is completed before starting runtime validation tasks.
 - Lesson learned: Provisioning code and validation code should be created together, but acceptance sign-off must be gated on credential readiness.
 

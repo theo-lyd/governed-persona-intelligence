@@ -210,3 +210,24 @@
 - Expected output: README includes direct navigation to parameter sheet.
 - Actual result: Success.
 - Notes: Improves onboarding discoverability.
+
+30.
+- Command: `chmod +x scripts/security/run_access_matrix_and_capture.sh`
+- Purpose: Make the access-matrix capture helper executable.
+- Expected output: Script is runnable directly from terminal.
+- Actual result: Success.
+- Notes: Required for novice follow-up workflow.
+
+31.
+- Command: `create_file docs/security/guides/workspace-novice-setup.md`
+- Purpose: Add the novice Workspace setup guide with SQL and non-SQL instructions.
+- Expected output: New guide document in tracked repo path.
+- Actual result: Success.
+- Notes: Covers Workspace steps, MFA, secrets, and rotation.
+
+32.
+- Command: `create_file scripts/security/run_access_matrix_and_capture.sh`
+- Purpose: Add a helper to run validation and copy the evidence into the tracked Phase 0 evidence path.
+- Expected output: Script that automates evidence capture after successful validation.
+- Actual result: Success.
+- Notes: Helps close the loop once credentials are available.

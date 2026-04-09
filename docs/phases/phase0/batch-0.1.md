@@ -39,9 +39,12 @@
 	- `.devcontainer/*`
 	- `docs/security/*`
 	- `scripts/security/*`
+	- `docs/security/guides/workspace-novice-setup.md`
+	- `scripts/security/run_access_matrix_and_capture.sh`
 - Test and validation evidence:
 	- Access-matrix validation scripts prepared.
 	- Batch 0.1B execution attempted and logged at `docs/phases/phase0/evidence/access-matrix-run.txt`.
+	- Local follow-up capture command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
 	- Current run output: `SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set`.
 - Quality gate result:
 	- Partially met: policy and scaffolding complete, runtime validation blocked pending secure credentials and snow CLI runtime availability.
@@ -78,7 +81,7 @@
 - Evidence artifact: `docs/phases/phase0/evidence/access-matrix-run.txt`.
 - Next action to close gate:
 	- Provide `SNOWFLAKE_ACCOUNT` and `SNOWFLAKE_USER` plus authentication credentials.
-	- Run access matrix script and attach resulting `artifacts/security/access-matrix.txt`.
+	- Run `scripts/security/run_access_matrix_and_capture.sh` and attach resulting `docs/phases/phase0/evidence/access-matrix-run.txt`.
 	- Capture platform/security sign-off record.
 
 ## Batch Completion Checklist
