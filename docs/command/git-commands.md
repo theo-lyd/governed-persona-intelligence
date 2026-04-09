@@ -532,3 +532,31 @@
 - Expected output: Remote branch updated.
 - Actual result: Success, remote updated `0ba0c27..9f2bb5d`.
 - Notes: Required by standing instructions.
+
+76.
+- Command: `git status --short`
+- Purpose: Verify pending I.1B implementation and documentation changes before staging.
+- Expected output: Modified/new I.1B files listed.
+- Actual result: Pending.
+- Notes: Pre-commit validation for Batch I.1B.
+
+77.
+- Command: `git add src/ingestion/airbyte/README.md src/ingestion/airbyte/config/README.md src/ingestion/airbyte/config/source_web_events.template.json src/ingestion/airbyte/config/source_transactions.template.json src/ingestion/airbyte/config/destination_snowflake_raw.template.json src/ingestion/airbyte/config/connection_web_events_raw.template.json src/ingestion/airbyte/config/connection_transactions_raw.template.json src/ingestion/airbyte/sql/01_reconciliation_checks.sql scripts/ingestion/airbyte/render_templates.sh scripts/ingestion/airbyte/validate_drift_policy.py tests/unit/test_phase1_ingestion_i1b.py docs/phases/phase1/batch-1.1.md docs/issues-encountered/phase-1-issues.md docs/command/airbyte-commands.md docs/command/bash-shell-commands.md docs/command/git-commands.md`
+- Purpose: Stage all I.1B connector scaffolding, validation assets, and governance record updates.
+- Expected output: No output on success.
+- Actual result: Pending.
+- Notes: Single staging step for atomic I.1B publish.
+
+78.
+- Command: `git commit -m "feat: implement phase i1b connector and validation scaffolding | why: prepare deterministic airbyte landing and drift checks before live sync activation"`
+- Purpose: Publish I.1B implementation as one logical change.
+- Expected output: Commit hash and changed files summary.
+- Actual result: Pending.
+- Notes: Commit message follows required why format.
+
+79.
+- Command: `git push origin master`
+- Purpose: Publish I.1B commit.
+- Expected output: Remote branch updated.
+- Actual result: Pending.
+- Notes: Required by standing instructions.

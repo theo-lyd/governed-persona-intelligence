@@ -1,0 +1,16 @@
+{
+  "name": "gpi-web-events-json",
+  "sourceDefinitionId": "${AIRBYTE_SOURCE_DEF_HTTP_API_ID}",
+  "workspaceId": "${AIRBYTE_WORKSPACE_ID}",
+  "connectionConfiguration": {
+    "url": "${WEB_EVENTS_ENDPOINT}",
+    "api_key": "${WEB_EVENTS_API_KEY}",
+    "format": "json",
+    "cursor_field": "event_ts",
+    "primary_key": [
+      [
+        "event_id"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "gpi-transactions-csv",
+  "sourceDefinitionId": "${AIRBYTE_SOURCE_DEF_S3_ID}",
+  "workspaceId": "${AIRBYTE_WORKSPACE_ID}",
+  "connectionConfiguration": {
+    "bucket": "${TRANSACTION_BUCKET}",
+    "path_prefix": "${TRANSACTION_PREFIX}",
+    "format": {
+      "filetype": "csv",
+      "delimiter": ",",
+      "quote_char": "\"",
+      "has_header": true
+    },
+    "provider": {
+      "access_key_id": "${AWS_ACCESS_KEY_ID}",
+      "secret_access_key": "${AWS_SECRET_ACCESS_KEY}",
+      "region": "${AWS_REGION}"
+    }
+  }
+}

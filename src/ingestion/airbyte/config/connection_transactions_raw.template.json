@@ -1,0 +1,33 @@
+{
+  "name": "gpi-transactions-to-raw",
+  "namespaceDefinition": "destination",
+  "namespaceFormat": "${SOURCE_NAMESPACE}",
+  "prefix": "raw_",
+  "sourceId": "${AIRBYTE_TRANSACTIONS_SOURCE_ID}",
+  "destinationId": "${AIRBYTE_SNOWFLAKE_DESTINATION_ID}",
+  "scheduleType": "cron",
+  "scheduleData": {
+    "cron": {
+      "cronExpression": "30 */1 * * *",
+      "cronTimeZone": "UTC"
+    }
+  },
+  "syncCatalog": {
+    "streams": [
+      {
+        "stream": {
+          "name": "transactions",
+          "jsonSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object"
+          }
+        },
+        "config": {
+          "syncMode": "full_refresh",
+          "destinationSyncMode": "append",
+          "aliasName": "RAW_TRANSACTIONS_CSV"
+        }
+      }
+    ]
+  }
+}

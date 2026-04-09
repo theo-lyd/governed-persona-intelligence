@@ -1,0 +1,20 @@
+{
+  "name": "gpi-snowflake-raw",
+  "destinationDefinitionId": "${AIRBYTE_DEST_DEF_SNOWFLAKE_ID}",
+  "workspaceId": "${AIRBYTE_WORKSPACE_ID}",
+  "connectionConfiguration": {
+    "host": "${SNOWFLAKE_HOST}",
+    "role": "${AIRBYTE_SNOWFLAKE_ROLE}",
+    "warehouse": "${AIRBYTE_SNOWFLAKE_WAREHOUSE}",
+    "database": "${AIRBYTE_SNOWFLAKE_DATABASE}",
+    "schema": "RAW",
+    "username": "${AIRBYTE_SNOWFLAKE_USER}",
+    "credentials": {
+      "auth_type": "key_pair",
+      "private_key": "${AIRBYTE_SNOWFLAKE_PRIVATE_KEY}"
+    },
+    "loading_method": {
+      "method": "internal_staging"
+    }
+  }
+}

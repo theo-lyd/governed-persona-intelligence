@@ -1,0 +1,41 @@
+{
+  "name": "gpi-web-events-to-raw",
+  "namespaceDefinition": "destination",
+  "namespaceFormat": "${SOURCE_NAMESPACE}",
+  "prefix": "raw_",
+  "sourceId": "${AIRBYTE_WEB_EVENTS_SOURCE_ID}",
+  "destinationId": "${AIRBYTE_SNOWFLAKE_DESTINATION_ID}",
+  "scheduleType": "cron",
+  "scheduleData": {
+    "cron": {
+      "cronExpression": "0 */1 * * *",
+      "cronTimeZone": "UTC"
+    }
+  },
+  "syncCatalog": {
+    "streams": [
+      {
+        "stream": {
+          "name": "web_events",
+          "jsonSchema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object"
+          }
+        },
+        "config": {
+          "syncMode": "incremental",
+          "destinationSyncMode": "append_dedup",
+          "cursorField": [
+            "event_ts"
+          ],
+          "primaryKey": [
+            [
+              "event_id"
+            ]
+          ],
+          "aliasName": "RAW_WEB_EVENTS_JSON"
+        }
+      }
+    ]
+  }
+}

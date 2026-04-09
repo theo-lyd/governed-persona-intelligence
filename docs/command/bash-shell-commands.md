@@ -246,6 +246,13 @@
 - Actual result: Success, `2 passed`.
 - Notes: Confirms I.1A baseline quality before connector configuration work.
 
+35.
+- Command: `chmod +x scripts/ingestion/airbyte/render_templates.sh && bash -n scripts/ingestion/airbyte/render_templates.sh && python scripts/ingestion/airbyte/validate_drift_policy.py && python -m pytest -q tests/unit/test_phase1_ingestion_contracts.py tests/unit/test_phase1_ingestion_i1b.py`
+- Purpose: Validate I.1B template rendering script, drift-policy behavior, and Phase I ingestion tests.
+- Expected output: Drift validation PASS plus successful pytest summary.
+- Actual result: Success, drift policy PASS and `5 passed`.
+- Notes: Confirms I.1A + I.1B scaffolding quality before live connector execution.
+
 34.
 - Command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
 - Purpose: Reconfirm the access-matrix capture path after the Phase 0 closure baseline.
