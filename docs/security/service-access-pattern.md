@@ -26,3 +26,5 @@ Define role assignments and default warehouse usage for service principals.
 - No service role inherits ACCOUNTADMIN.
 - Service users have only required object privileges.
 - Role grants are validated via access-matrix script outputs.
+
+<- [ ] Add observability monitors and expectation Dry-run PR 2 marker for Phase 0 Batch 0.2 clone validation -->
