@@ -23,7 +23,7 @@ For every phase deliverable:
   - Acceptance criteria met
   - Time taken estimate
   - Dependencies introduced
-- Keep command logs under `doc/command/` and update continuously.
+- Keep command logs under `docs/command/` and update continuously.
 - Update README deliverables index with phase and batch links.
 
 ## Why Documentation Standard

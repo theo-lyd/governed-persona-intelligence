@@ -52,7 +52,7 @@ Use this structure for every batch report in phase docs:
 - Why needed:
 
 ## 3. Command Log Policy
-Maintain and update command logs under `doc/command/`:
+Maintain and update command logs under `docs/command/`:
 - `git-commands.md`
 - `make-commands.md`
 - `bash-shell-commands.md`
@@ -80,7 +80,7 @@ Required document set:
 - Project runbook
 
 ## 5. Issues and Incident Documentation
-Maintain per-phase issue logs in `doc/issues-encountered/`.
+Maintain per-phase issue logs in `docs/issues-encountered/`.
 
 Each issue record must capture:
 - What issue occurred

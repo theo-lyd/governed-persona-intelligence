@@ -63,3 +63,31 @@
 - Expected output: Push success with updated remote branch.
 - Actual result: Success, remote updated `master -> master`.
 - Notes: Required by standing instructions.
+
+9.
+- Command: `git status --short`
+- Purpose: Review staged and unstaged changes after folder migration and scaffold updates.
+- Expected output: List of updated, moved, and newly created files.
+- Actual result: Pending execution.
+- Notes: Pre-commit validation for correction batch.
+
+10.
+- Command: `git add -A`
+- Purpose: Stage migration, path updates, and phase batch report scaffolds.
+- Expected output: No output on success.
+- Actual result: Pending execution.
+- Notes: Includes file renames from `doc/` to `docs/`.
+
+11.
+- Command: `git commit -m "docs: migrate doc tree to docs and add phase batch folders | why: align repository structure with corrected documentation policy"`
+- Purpose: Publish structural correction as a single logical commit.
+- Expected output: Commit hash and changed files summary.
+- Actual result: Pending execution.
+- Notes: Message includes why rationale.
+
+12.
+- Command: `git push origin master`
+- Purpose: Publish correction batch changes.
+- Expected output: Remote branch updated.
+- Actual result: Pending execution.
+- Notes: Required by standing instructions.
