@@ -194,26 +194,26 @@
 - Command: `git status --short`
 - Purpose: Verify pending changes before publishing Jira sample/board-specific variant artifacts.
 - Expected output: Modified and new files listed.
-- Actual result: Pending execution.
+- Actual result: Success, staged/untracked Jira and docs files listed.
 - Notes: Pre-commit validation for this batch.
 
 28.
 - Command: `git add docs/jira/jira-export-sample.csv docs/jira/jira-import-board-specific.csv docs/jira/README.md README.md`
 - Purpose: Stage Jira sample and board-specific variant with documentation links.
 - Expected output: No output on success.
-- Actual result: Pending execution.
+- Actual result: Success.
 - Notes: Atomic publish prep for Jira artifacts.
 
 29.
 - Command: `git commit -m "docs: add synthetic jira export sample and board-specific csv | why: enable board-tailored imports without requiring user-provided sample"`
 - Purpose: Publish sample and board-specific CSV deliverables.
 - Expected output: Commit hash and file summary.
-- Actual result: Pending execution.
+- Actual result: Success, commit `743bec9` created.
 - Notes: Commit message includes why rationale.
 
 30.
 - Command: `git push origin master`
 - Purpose: Publish Jira sample/board-specific commit.
 - Expected output: Remote branch updated.
-- Actual result: Pending execution.
+- Actual result: Success, remote updated `241094e..743bec9`.
 - Notes: Required by standing instructions.
