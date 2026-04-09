@@ -4,6 +4,9 @@ A production-grade AE framework for dynamic behavioral segmentation. Leveraging 
 ## Project Execution Roadmap
 See the production delivery plan in [docs/implementation-roadmap.md](docs/implementation-roadmap.md).
 
+## Planning Artifacts
+- Master backlog and sprint milestones: [docs/planning/master-backlog.md](docs/planning/master-backlog.md)
+
 ## Delivery Operations
 - Execution tracker checklist: [docs/execution-tracker.md](docs/execution-tracker.md)
 - Phase sign-off issue template: [.github/ISSUE_TEMPLATE/phase-signoff.md](.github/ISSUE_TEMPLATE/phase-signoff.md)
