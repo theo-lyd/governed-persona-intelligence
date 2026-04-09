@@ -565,26 +565,26 @@
 - Command: `git status --short`
 - Purpose: Review I.1C implementation and governance updates before staging.
 - Expected output: Modified/new I.1C files listed.
-- Actual result: Pending.
+- Actual result: Success, I.1C docs, monitor specs, scripts, and tests were listed.
 - Notes: Pre-commit validation for Batch I.1C.
 
 81.
 - Command: `git add docs/phases/phase1/batch-1.1.md docs/issues-encountered/phase-1-issues.md docs/execution-tracker.md docs/command/bash-shell-commands.md docs/command/monte-carlo-commands.md docs/command/git-commands.md src/observability/monte_carlo/phase1/README.md src/observability/monte_carlo/phase1/raw_ingestion_monitors.yaml scripts/observability/monte_carlo/validate_phase1_monitor_specs.py scripts/ingestion/airbyte/evaluate_load_success.py docs/phases/phase1/evidence/i1c-monitor-activation.md docs/phases/phase1/evidence/i1c-load-success-runs.csv tests/unit/test_phase1_ingestion_i1c.py`
 - Purpose: Stage all I.1C observability and evidence-tracking assets as a single logical change.
 - Expected output: No output on success.
-- Actual result: Pending.
+- Actual result: Success.
 - Notes: Supports atomic batch commit.
 
 82.
 - Command: `git commit -m "feat: implement phase i1c observability and evidence scaffolding | why: prepare monitor and completion-gate controls before live connector activation"`
 - Purpose: Publish I.1C implementation and governance updates.
 - Expected output: Commit hash and changed files summary.
-- Actual result: Pending.
+- Actual result: Success, commit `5b01435` created with 13 files changed.
 - Notes: Message includes explicit why rationale.
 
 83.
 - Command: `git push origin master`
 - Purpose: Publish I.1C commit.
 - Expected output: Remote branch updated.
-- Actual result: Pending.
+- Actual result: Success, remote updated `436a2e0..5b01435`.
 - Notes: Required by standing instructions.
