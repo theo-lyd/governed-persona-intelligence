@@ -47,19 +47,19 @@
 - Command: `git add .`
 - Purpose: Stage Batch G1 documentation and governance changes.
 - Expected output: No output on success.
-- Actual result: Pending execution.
+- Actual result: Success, all Batch G1 files staged.
 - Notes: Atomic batch publish step.
 
 7.
 - Command: `git commit -m "docs: add governance and delivery scaffolding | why: enforce approved batch protocol and documentation standards"`
 - Purpose: Create atomic commit for Batch G1 changes.
 - Expected output: Commit hash and files changed summary.
-- Actual result: Pending execution.
+- Actual result: Success, commit `e989911` created with 30 files changed.
 - Notes: Commit message includes why rationale.
 
 8.
 - Command: `git push origin master`
 - Purpose: Publish Batch G1 deliverables.
 - Expected output: Push success with updated remote branch.
-- Actual result: Pending execution.
+- Actual result: Success, remote updated `master -> master`.
 - Notes: Required by standing instructions.
