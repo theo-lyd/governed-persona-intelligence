@@ -7,6 +7,10 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 ## Planning Artifacts
 - Master backlog and sprint milestones: [docs/planning/master-backlog.md](docs/planning/master-backlog.md)
 
+## Jira Artifacts
+- Jira import CSV: [docs/jira/jira-import.csv](docs/jira/jira-import.csv)
+- Jira import notes: [docs/jira/README.md](docs/jira/README.md)
+
 ## Delivery Operations
 - Execution tracker checklist: [docs/execution-tracker.md](docs/execution-tracker.md)
 - Phase sign-off issue template: [.github/ISSUE_TEMPLATE/phase-signoff.md](.github/ISSUE_TEMPLATE/phase-signoff.md)
