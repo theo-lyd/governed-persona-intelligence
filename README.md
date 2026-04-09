@@ -29,6 +29,7 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 - Secrets management baseline: [docs/security/secrets-management.md](docs/security/secrets-management.md)
 - Service access pattern: [docs/security/service-access-pattern.md](docs/security/service-access-pattern.md)
 - Snowflake parameter sheet (DEV/TEST/PROD + CI): [docs/security/snowflake-parameter-sheet.md](docs/security/snowflake-parameter-sheet.md)
+- Snowflake connection retrospective (Phase 0): [docs/security/snowflake-connection-retrospective-phase0.md](docs/security/snowflake-connection-retrospective-phase0.md)
 - Workspace novice setup guide: [docs/security/guides/workspace-novice-setup.md](docs/security/guides/workspace-novice-setup.md)
 
 ## Command Logs
@@ -68,6 +69,7 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 - Project runbook: [docs/project-runbook.md](docs/project-runbook.md)
 - Phase 0 Batch 0.1 report: [docs/phases/phase0/batch-0.1.md](docs/phases/phase0/batch-0.1.md)
 - Phase 0 Batch 0.2 report: [docs/phases/phase0/batch-0.2.md](docs/phases/phase0/batch-0.2.md)
+- Phase 0 updates and safety summary: [docs/phases/phase0/phase0-updates-and-safety-summary.md](docs/phases/phase0/phase0-updates-and-safety-summary.md)
 - Phase 0 CI guardrails: [docs/governance/phase0-ci-guardrails.md](docs/governance/phase0-ci-guardrails.md)
 
 ## Quick-Start Commands
