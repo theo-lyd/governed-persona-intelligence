@@ -4,16 +4,17 @@
 This document defines the Batch 0.2 guardrails that sit immediately after the validated access baseline.
 
 ## GitHub Actions Checks
-The Phase 0 CI workflow is expected to surface these required checks:
+The Phase 0 CI workflow is expected to surface these required checks on every PR:
 - `lint`
 - `unit-tests`
 - `dbt-parse`
-- `clone-plan`
+
+The `clone-plan` job remains path-aware and is available for PRs that touch clone, security, or infrastructure-adjacent paths.
 
 ## Branch Protection Policy
 The `master` branch should be protected with the following merge controls:
 - Require pull request reviews before merge.
-- Require the checks above to pass before merge.
+- Require the always-on checks above to pass before merge.
 - Dismiss stale approvals when new commits are pushed.
 - Restrict direct pushes to maintain audited change control.
 

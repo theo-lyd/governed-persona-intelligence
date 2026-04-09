@@ -35,3 +35,10 @@
 - Expected output: 3 passing tests.
 - Actual result: Success, `3 passed`.
 - Notes: Validates the Batch 0.2 CI policy helpers.
+
+5.
+- Command: `python - <<'PY' ... yaml.safe_load(Path('.github/workflows/phase0-ci.yml').read_text()) ... PY`
+- Purpose: Re-validate the workflow after making lint, unit-tests, and dbt-parse unconditional on every PR.
+- Expected output: Workflow parses cleanly and job definitions remain intact.
+- Actual result: Success, workflow name `Phase 0 CI` and jobs `classify_changes,lint,unit-tests,dbt-parse,clone-plan` printed without parsing errors.
+- Notes: Confirms the stricter branch-protection shape is still syntactically valid.

@@ -52,7 +52,6 @@ jobs:
 
   lint:
     needs: classify_changes
-    if: needs.classify_changes.outputs.lint == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -71,7 +70,6 @@ jobs:
 
   unit-tests:
     needs: classify_changes
-    if: needs.classify_changes.outputs.unit == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -90,7 +88,6 @@ jobs:
 
   dbt-parse:
     needs: classify_changes
-    if: needs.classify_changes.outputs.dbt == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

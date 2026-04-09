@@ -25,7 +25,7 @@
 
 ### Output
 - Code/data artifacts produced:
-	- `.github/workflows/phase0-ci.yml` with path-filtered CI jobs for lint, unit tests, dbt parse, clone-plan, and release-tag validation.
+	- `.github/workflows/phase0-ci.yml` now runs lint, unit-tests, and dbt-parse on every PR, while clone-plan remains path-aware for clone/security-impacting changes.
 	- `scripts/ci/lint.sh`, `scripts/ci/pr_clone_plan.sh`, and `scripts/ci/check_release_tag.sh`.
 	- `dbt/phase0/dbt_project.yml`, `dbt/phase0/models/phase0_healthcheck.sql`, and `.github/dbt/profiles.yml`.
 	- `docs/governance/phase0-ci-guardrails.md` documenting branch protection and release conventions.
@@ -65,6 +65,7 @@
 - Result: success.
 - Validation artifacts: local command output and unit test pass captured in the command logs.
 - Next action: begin the first PR dry-run against the clone-plan workflow and review branch protection settings in GitHub.
+- Next action: keep the branch-protection rule aligned with the always-on PR checks and re-run a dry-run PR if needed.
 
 ## Batch Completion Checklist
 - [x] Scope and objectives announced
