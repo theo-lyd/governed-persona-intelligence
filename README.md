@@ -28,6 +28,7 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 - Git LFS policy: [docs/git-lfs-policy.md](docs/git-lfs-policy.md)
 - Secrets management baseline: [docs/security/secrets-management.md](docs/security/secrets-management.md)
 - Service access pattern: [docs/security/service-access-pattern.md](docs/security/service-access-pattern.md)
+- Snowflake parameter sheet (DEV/TEST/PROD + CI): [docs/security/snowflake-parameter-sheet.md](docs/security/snowflake-parameter-sheet.md)
 
 ## Command Logs
 - Git: [docs/command/git-commands.md](docs/command/git-commands.md)

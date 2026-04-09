@@ -196,3 +196,17 @@
 - Expected output: Access matrix text output on success.
 - Actual result: Failure message captured: `SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER must be set`.
 - Notes: Artifact created for audit traceability.
+
+28.
+- Command: `create_file docs/security/snowflake-parameter-sheet.md`
+- Purpose: Create copy-ready parameter sheet using provided account values and recommended DEV/TEST/PROD settings.
+- Expected output: New parameter sheet with local and CI secret mappings.
+- Actual result: Success.
+- Notes: Includes Azure account details and recommended role/warehouse/database defaults.
+
+29.
+- Command: `apply_patch README.md`
+- Purpose: Add parameter sheet link to governance section.
+- Expected output: README includes direct navigation to parameter sheet.
+- Actual result: Success.
+- Notes: Improves onboarding discoverability.
