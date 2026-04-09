@@ -7,6 +7,7 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 ## Planning Artifacts
 - Master backlog and sprint milestones: [docs/planning/master-backlog.md](docs/planning/master-backlog.md)
 - Project scaffold: [docs/planning/project-scaffold.md](docs/planning/project-scaffold.md)
+- Strategic business blueprint: [docs/business-blueprint.md](docs/business-blueprint.md)
 
 ## Jira Artifacts
 - Jira import CSV: [docs/jira/jira-import.csv](docs/jira/jira-import.csv)

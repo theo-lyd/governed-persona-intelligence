@@ -52,6 +52,7 @@ Milestone: Financial parsing and historical semantic core foundation.
 - BL-032 Define SCD2 snapshot contract for dim_users (5 pts) - Owner: AE
 - BL-033 Implement dbt snapshots with overlap/current-record tests (8 pts) - Owner: AE
 - BL-034 Build no-orphan transaction relationship tests (5 pts) - Owner: AE, QAE
+- BL-035 Enforce anonymized-ID modeling contract across feature and ML layers (5 pts) - Owner: AE, MLE, DPE
 Sprint target: Phase II complete and Phase III Batch III.1 complete.
 
 ### Sprint 5 (Phase III and Phase IV)
@@ -70,6 +71,7 @@ Milestone: Churn model, registry lineage, and drift automation.
 - BL-052 Register model versions and training lineage metadata (5 pts) - Owner: MLE
 - BL-053 Configure drift monitors and >15% retrain trigger in Airflow (8 pts) - Owner: MLE, DE
 - BL-054 Implement canary scoring and promotion checks (5 pts) - Owner: MLE, QAE
+- BL-055 Implement churn migration rule (>=30% spend drop over 14 days) and QA assertions (5 pts) - Owner: MLE, AE, QAE
 Sprint target: Phase IV Batches IV.2 and IV.3 complete.
 
 ### Sprint 7 (Phase V)
@@ -88,6 +90,7 @@ Milestone: Production hardening, rollout, and BAU transition.
 - BL-072 Execute progressive rollout and hypercare KPI tracking (8 pts) - Owner: BI, PO
 - BL-073 Complete final acceptance package and handover to operations (5 pts) - Owner: PO, DPE
 - BL-074 Post-implementation review and optimization backlog (3 pts) - Owner: PO, BI
+- BL-075 Deliver dynamic cohort heatmap dashboard and weekly operating review pack (5 pts) - Owner: BI, AE
 Sprint target: Program Definition of Done achieved.
 
 ## Epic Structure

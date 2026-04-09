@@ -358,6 +358,8 @@ Gate B: Business Rule Enforcement
 - Rule 1: session inactivity closure at 20 minutes.
 - Rule 2: no orphan transactions in gold layer.
 - Rule 3: `RFM_Score` null rate must remain <= 1%.
+- Rule 4: migration rule for churn-risk routing when spending drops by >= 30% over 14 days.
+- Rule 5: behavioral modeling must use anonymized identifiers in ML and segmentation outputs.
 
 Gate C: Model and AI Governance
 - Required checks: reproducibility, registry lineage, drift monitoring, prompt safety controls.
@@ -394,3 +396,20 @@ Implementation is considered complete and correct only when all conditions below
 - Causal uplift modeling for campaign strategy beyond churn probability.
 - Multilingual narrative generation (German-first with controlled English fallback).
 - Cost optimization across warehouses and retraining frequency.
+
+## 9) Business Output Layer (Executive Alignment)
+
+Primary business products:
+- Persona Consultant: natural-language interface for segment change diagnostics and action recommendations.
+- Dynamic cohort heatmaps: movement tracking from low-value to high-value segments over time.
+- Self-healing audit log: freshness, quality, and late-data recovery transparency for spend confidence.
+
+Strategic question bank (sample categories):
+- Customer health: recency without conversion, journey progression, regional churn concentration.
+- Marketing efficiency: discount elasticity by micro-audience, seasonal behavior traits, region-level monetization efficiency.
+- AI exploration: cart-abandonment traits and projected revenue impact of cohort migration.
+
+Business acceptance evidence:
+- Stakeholder sign-off from CMO/CDO delegates on decision usability.
+- Evidence of at least one campaign decision triggered from Persona Consultant outputs.
+- Cohort movement dashboard adopted in weekly revenue/marketing operating rhythm.

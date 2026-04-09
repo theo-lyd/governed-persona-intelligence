@@ -126,3 +126,24 @@
 - Expected output: Row count, expected header list, non-empty sample story parent.
 - Actual result: Success (`rows 48`, sample parent `EPIC-FOUNDATION`).
 - Notes: Added to reduce import risk.
+
+18.
+- Command: `apply_patch` to create `docs/business-blueprint.md`
+- Purpose: Add strategic business blueprint for executive stakeholders.
+- Expected output: New markdown file with vision, operating model, rules, insight bank, outputs, and executive summary.
+- Actual result: Success.
+- Notes: Content adapted from provided business blueprint details.
+
+19.
+- Command: `apply_patch` to update `docs/implementation-roadmap.md`
+- Purpose: Add migration and privacy governance rules plus business output alignment section.
+- Expected output: Roadmap reflects additional business constraints and acceptance evidence.
+- Actual result: Success.
+- Notes: Improves alignment between engineering plan and business governance.
+
+20.
+- Command: `apply_patch` to update `docs/planning/master-backlog.md`
+- Purpose: Add backlog work items for anonymized IDs, churn migration rule, and dynamic cohort heatmaps.
+- Expected output: Sprint backlog includes blueprint-driven execution tasks.
+- Actual result: Success.
+- Notes: Ensures business blueprint becomes actionable execution scope.
