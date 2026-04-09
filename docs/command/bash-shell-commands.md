@@ -240,6 +240,13 @@
 - Notes: Led to adding `/artifacts/` to `.gitignore`.
 
 34.
+- Command: `python -m pytest -q tests/unit/test_phase1_ingestion_contracts.py`
+- Purpose: Validate Phase I.1A event contracts and Snowflake raw-landing metadata definitions.
+- Expected output: Tests pass for contract shape and metadata columns.
+- Actual result: Success, `2 passed`.
+- Notes: Confirms I.1A baseline quality before connector configuration work.
+
+34.
 - Command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
 - Purpose: Reconfirm the access-matrix capture path after the Phase 0 closure baseline.
 - Expected output: Runtime report and tracked evidence copy.

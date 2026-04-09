@@ -15,6 +15,7 @@ This folder contains Phase 0 Batch 0.1 Snowflake provisioning assets.
 - `resource_monitors/`: warehouse credit governance scripts.
 - `roles/`: role hierarchy and role-to-object grants.
 - `security/`: service user creation and role grants.
+- `ingestion/`: raw landing stages, file formats, and ingestion metadata tables.
 
 ## Execution Order
 1. `resource_monitors/01_resource_monitors.sql`
@@ -25,6 +26,7 @@ This folder contains Phase 0 Batch 0.1 Snowflake provisioning assets.
 6. `roles/02_role_grants.sql`
 7. `security/01_service_users.sql`
 8. `security/02_service_role_grants.sql`
+9. `ingestion/01_raw_landing.sql`
 
 ## Notes
 - Replace placeholder values in angle brackets (for example `<ORG_PREFIX>`).

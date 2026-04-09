@@ -1,0 +1,46 @@
+{
+  "contract_name": "transactions_csv_v1",
+  "source_type": "csv",
+  "description": "Transaction export landing contract.",
+  "required_fields": [
+    {
+      "name": "transaction_id",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "transaction_ts",
+      "type": "timestamp"
+    },
+    {
+      "name": "amount",
+      "type": "number"
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    }
+  ],
+  "optional_fields": [
+    {
+      "name": "channel",
+      "type": "string"
+    },
+    {
+      "name": "region",
+      "type": "string"
+    },
+    {
+      "name": "coupon_code",
+      "type": "string"
+    }
+  ],
+  "drift_policy": {
+    "additive_fields": "reject_until_contract_update",
+    "missing_required_fields": "reject_record",
+    "type_mismatch": "reject_record"
+  }
+}
