@@ -348,26 +348,26 @@
 - Command: `git status --short`
 - Purpose: Verify pending updates before publishing Batch 0.1B evidence and report changes.
 - Expected output: Modified/new files listed.
-- Actual result: Pending execution.
+- Actual result: Success, modified/new files listed.
 - Notes: Pre-commit validation for 0.1B update.
 
 50.
 - Command: `git add scripts/security/run_access_matrix_checks.sh docs/phases/phase0/batch-0.1.md docs/phases/phase0/evidence/access-matrix-run.txt docs/issues-encountered/phase-0-issues.md docs/command/bash-shell-commands.md docs/command/git-commands.md`
 - Purpose: Stage Batch 0.1B evidence and documentation updates.
 - Expected output: No output on success.
-- Actual result: Pending execution.
+- Actual result: Success.
 - Notes: Includes runtime validation evidence artifact.
 
 51.
 - Command: `git commit -m "docs: capture phase0 batch0.1b validation evidence | why: document blocker and preserve audit trail for gate closure"`
 - Purpose: Publish Batch 0.1B execution evidence update.
 - Expected output: Commit hash and changed file summary.
-- Actual result: Pending execution.
+- Actual result: Success, commit `18e23a3` created.
 - Notes: Atomic commit includes why rationale.
 
 52.
 - Command: `git push origin master`
 - Purpose: Publish Batch 0.1B evidence commit.
 - Expected output: Remote branch updated.
-- Actual result: Pending execution.
+- Actual result: Success, remote updated `7d8f746..18e23a3`.
 - Notes: Required by standing instructions.
