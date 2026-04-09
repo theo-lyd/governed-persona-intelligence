@@ -91,3 +91,38 @@
 - Expected output: Remote branch updated.
 - Actual result: Success, remote updated `master -> master`.
 - Notes: Required by standing instructions.
+
+13.
+- Command: `mv docs/command/dbt-duckdb-commands.md docs/command/dbt-commands.md`
+- Purpose: Align command log naming to project scope without DuckDB.
+- Expected output: File renamed successfully.
+- Actual result: Success.
+- Notes: Applied per user correction.
+
+14.
+- Command: `git status --short`
+- Purpose: Review correction batch changes before commit.
+- Expected output: Modified and added files listed.
+- Actual result: Pending execution.
+- Notes: Pre-commit verification for this batch.
+
+15.
+- Command: `git add -A`
+- Purpose: Stage renamed and newly created command logs plus index updates.
+- Expected output: No output on success.
+- Actual result: Pending execution.
+- Notes: Includes README and standing instruction updates.
+
+16.
+- Command: `git commit -m "docs: rename dbt command log and add snowflake command logs | why: align command documentation with actual project stack"`
+- Purpose: Publish this correction batch as an atomic documentation change.
+- Expected output: Commit hash and file summary.
+- Actual result: Pending execution.
+- Notes: Commit message includes why rationale.
+
+17.
+- Command: `git push origin master`
+- Purpose: Publish this correction batch to remote.
+- Expected output: Remote branch updated.
+- Actual result: Pending execution.
+- Notes: Required by repository standing instructions.

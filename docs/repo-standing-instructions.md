@@ -57,7 +57,15 @@ Maintain and update command logs under `docs/command/`:
 - `make-commands.md`
 - `bash-shell-commands.md`
 - `lint-commands.md`
-- `dbt-duckdb-commands.md`
+- `dbt-commands.md`
+- `snowflake-commands.md`
+- `snowpark-commands.md`
+- `airflow-commands.md`
+- `airbyte-commands.md`
+- `great-expectations-commands.md`
+- `monte-carlo-commands.md`
+- `streamlit-commands.md`
+- `github-actions-commands.md`
 - `python-commands.md`
 - `docker-commands.md`
 

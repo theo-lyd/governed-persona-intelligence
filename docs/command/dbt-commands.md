@@ -1,4 +1,4 @@
-# dbt and DuckDB Commands Log
+# dbt Commands Log
 
 ## Entry Format
 - Command:
@@ -10,7 +10,7 @@
 ## Entries
 1.
 - Command: N/A
-- Purpose: Placeholder for dbt and DuckDB operations.
+- Purpose: Placeholder for dbt operations.
 - Expected output: Successful parse/run/test with expected model artifacts.
 - Actual result: Not yet used.
 - Notes: Update as soon as analytics workflows begin.

@@ -42,3 +42,17 @@
 - Expected output: All expected batch markdown files listed.
 - Actual result: All expected files present.
 - Notes: Validation step for requested folder structure.
+
+6.
+- Command: `mv docs/command/dbt-duckdb-commands.md docs/command/dbt-commands.md`
+- Purpose: Rename dbt command log to remove DuckDB reference.
+- Expected output: Renamed file present as `dbt-commands.md`.
+- Actual result: Success.
+- Notes: Per additional correction request.
+
+7.
+- Command: `ls -1 docs/command | sort`
+- Purpose: Validate current command-log inventory after additions.
+- Expected output: Includes dbt, snowflake, and other stack-specific command logs.
+- Actual result: Success, expected list confirmed.
+- Notes: Used to verify scaffolding completeness.
