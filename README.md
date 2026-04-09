@@ -13,6 +13,7 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 - Jira import notes: [docs/jira/README.md](docs/jira/README.md)
 - Synthetic Jira export sample row: [docs/jira/jira-export-sample.csv](docs/jira/jira-export-sample.csv)
 - Board-specific Jira import CSV variant: [docs/jira/jira-import-board-specific.csv](docs/jira/jira-import-board-specific.csv)
+- Team-managed Jira import CSV variant (Parent linkage): [docs/jira/jira-import-team-managed.csv](docs/jira/jira-import-team-managed.csv)
 
 ## Delivery Operations
 - Execution tracker checklist: [docs/execution-tracker.md](docs/execution-tracker.md)

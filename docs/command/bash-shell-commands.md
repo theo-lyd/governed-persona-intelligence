@@ -105,3 +105,24 @@
 - Expected output: Clean header and first rows without escape sequences.
 - Actual result: Success after regeneration.
 - Notes: Validation safeguard for import compatibility.
+
+15.
+- Command: `python - <<'PY' ... csv.DictReader/DictWriter ... PY`
+- Purpose: Generate Team-managed Jira CSV variant using `Parent` linkage derived from `Epic Link`.
+- Expected output: New `docs/jira/jira-import-team-managed.csv` with Parent-populated story rows.
+- Actual result: Success.
+- Notes: Uses Python `csv` module for safe handling of quoted comma fields.
+
+16.
+- Command: `sed -n '1,12p' docs/jira/jira-import-team-managed.csv`
+- Purpose: Preview header and first rows for visual verification.
+- Expected output: Header includes `Parent` and no `Epic Link`.
+- Actual result: Success.
+- Notes: Confirms Team-managed schema.
+
+17.
+- Command: `python - <<'PY' ... validate row count/header/sample parent ... PY`
+- Purpose: Validate CSV integrity and parent linkage programmatically.
+- Expected output: Row count, expected header list, non-empty sample story parent.
+- Actual result: Success (`rows 48`, sample parent `EPIC-FOUNDATION`).
+- Notes: Added to reduce import risk.

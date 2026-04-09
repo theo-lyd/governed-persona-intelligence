@@ -4,6 +4,7 @@
 - Import CSV: `docs/jira/jira-import.csv`
 - Synthetic export sample: `docs/jira/jira-export-sample.csv`
 - Board-specific import CSV: `docs/jira/jira-import-board-specific.csv`
+- Team-managed import CSV (Parent linkage): `docs/jira/jira-import-team-managed.csv`
 
 ## Included Fields
 - `Issue Type`
@@ -36,6 +37,12 @@ The board-specific CSV uses a common Jira company-managed schema:
 - `Reporter`
 - `Parent`
 
+## Team-Managed Variant Behavior
+- Uses `Parent` for epic linkage on story rows.
+- Does not include `Epic Link` column.
+- Keeps `Epic Name` for epic rows only.
+- Story rows set `Parent` to the matching epic identifier (for example `EPIC-FOUNDATION`).
+
 ## Expected Mapping in Jira CSV Importer
 - `Issue Type` -> Issue Type
 - `Summary` -> Summary
@@ -63,3 +70,4 @@ The board-specific CSV uses a common Jira company-managed schema:
 - If your Jira project uses Team-managed epics, map parent fields according to project settings.
 - Import epics and stories together from the same file to preserve `Epic Link` references.
 - The sample export is synthetic and safe to share; replace values with your real project keys if needed.
+- For Team-managed import, use `docs/jira/jira-import-team-managed.csv` and map `Parent` directly.

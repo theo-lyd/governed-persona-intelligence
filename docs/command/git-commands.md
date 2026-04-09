@@ -217,3 +217,31 @@
 - Expected output: Remote branch updated.
 - Actual result: Success, remote updated `241094e..743bec9`.
 - Notes: Required by standing instructions.
+
+31.
+- Command: `git status --short`
+- Purpose: Review pending files for Team-managed Jira CSV variant update.
+- Expected output: Modified docs and new CSV file listed.
+- Actual result: Pending execution.
+- Notes: Pre-commit validation for Team-managed variant batch.
+
+32.
+- Command: `git add docs/jira/jira-import-team-managed.csv docs/jira/README.md README.md`
+- Purpose: Stage Team-managed CSV variant and documentation links.
+- Expected output: No output on success.
+- Actual result: Pending execution.
+- Notes: Atomic publish prep for Team-managed Jira artifact.
+
+33.
+- Command: `git commit -m "docs: add team-managed jira csv variant | why: support parent-based epic linkage imports"`
+- Purpose: Publish Team-managed Jira variant.
+- Expected output: Commit hash and changed files summary.
+- Actual result: Pending execution.
+- Notes: Commit message includes why rationale.
+
+34.
+- Command: `git push origin master`
+- Purpose: Publish Team-managed Jira variant commit.
+- Expected output: Remote branch updated.
+- Actual result: Pending execution.
+- Notes: Required by standing instructions.
