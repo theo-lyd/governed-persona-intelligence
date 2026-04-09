@@ -621,26 +621,26 @@
 - Command: `git status --short`
 - Purpose: Review canonical dbt-path cleanup and runbook updates before staging.
 - Expected output: Modified/new cleanup batch files listed.
-- Actual result: Pending.
+- Actual result: Success, workflow/docs changes plus legacy `src/transformation/dbt` file deletions were listed.
 - Notes: Pre-commit validation for dbt ambiguity cleanup batch.
 
 89.
 - Command: `git add .github/workflows/phase0-ci.yml README.md docs/planning/project-scaffold.md docs/security/phase1-live-activation-runbook.md src/transformation/README.md src/transformation/dbt/README.md src/transformation/dbt/macros/.gitkeep src/transformation/dbt/models/staging/.gitkeep src/transformation/dbt/models/intermediate/.gitkeep src/transformation/dbt/models/marts/.gitkeep src/transformation/dbt/snapshots/.gitkeep src/transformation/dbt/tests/.gitkeep docs/command/bash-shell-commands.md docs/command/git-commands.md`
 - Purpose: Stage canonical dbt-path cleanup, legacy scaffold removal, runbook, and command-log updates.
 - Expected output: No output on success.
-- Actual result: Pending.
+- Actual result: Success.
 - Notes: Atomic staging set for this batch.
 
 90.
 - Command: `git commit -m "chore: standardize canonical dbt path and add activation runbook | why: remove transformation path ambiguity and unblock live phase i closure"`
 - Purpose: Publish dbt-path cleanup and blocker-resolution guidance.
 - Expected output: Commit hash and changed-files summary.
-- Actual result: Pending.
+- Actual result: Success, commit `712a48d` created with 14 files changed.
 - Notes: Message includes why rationale per repository standard.
 
 91.
 - Command: `git push origin master`
 - Purpose: Publish canonical dbt-path cleanup batch.
 - Expected output: Remote branch updated.
-- Actual result: Pending.
+- Actual result: Success, remote updated `6000a0f..712a48d`.
 - Notes: Required by standing instructions.
