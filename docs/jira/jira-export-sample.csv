@@ -1,0 +1,2 @@
+Project Key,Project Name,Issue Type,Summary,Description,Priority,Labels,Components,Sprint,Epic Name,Epic Link,Story Points,Status,Assignee,Reporter,Parent
+GPI,Governed Persona Intelligence,Story,BL-001 Setup Snowflake RBAC and resource monitors,"Provision Snowflake databases, warehouses, roles, schemas, and resource monitors.",Highest,"phase0,security,snowflake","platform,snowflake",Sprint 1 - Foundation,,EPIC-FOUNDATION,8,To Do,,,

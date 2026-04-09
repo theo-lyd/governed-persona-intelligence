@@ -11,6 +11,8 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 ## Jira Artifacts
 - Jira import CSV: [docs/jira/jira-import.csv](docs/jira/jira-import.csv)
 - Jira import notes: [docs/jira/README.md](docs/jira/README.md)
+- Synthetic Jira export sample row: [docs/jira/jira-export-sample.csv](docs/jira/jira-export-sample.csv)
+- Board-specific Jira import CSV variant: [docs/jira/jira-import-board-specific.csv](docs/jira/jira-import-board-specific.csv)
 
 ## Delivery Operations
 - Execution tracker checklist: [docs/execution-tracker.md](docs/execution-tracker.md)

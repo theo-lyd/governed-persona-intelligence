@@ -84,3 +84,24 @@
 - Expected output: `master-backlog.md` and `project-scaffold.md` listed.
 - Actual result: Success.
 - Notes: Validation for planning artifact completeness.
+
+12.
+- Command: `cat > docs/jira/jira-export-sample.csv <<EOF ... EOF`
+- Purpose: Create a synthetic Jira export sample with one issue row.
+- Expected output: CSV file with header and a sample story row.
+- Actual result: Success.
+- Notes: Used because no real exported sample was available.
+
+13.
+- Command: `awk 'BEGIN{...} NR>1{...}' docs/jira/jira-import.csv > docs/jira/jira-import-board-specific.csv`
+- Purpose: Generate board-specific CSV variant using the sample schema field names.
+- Expected output: CSV with project/board fields plus backlog issues.
+- Actual result: Success.
+- Notes: Regenerated once to remove control-character artifact from an earlier command form.
+
+14.
+- Command: `sed -n '1,3p' docs/jira/jira-import-board-specific.csv | cat -vet`
+- Purpose: Validate generated CSV integrity and detect hidden control characters.
+- Expected output: Clean header and first rows without escape sequences.
+- Actual result: Success after regeneration.
+- Notes: Validation safeguard for import compatibility.

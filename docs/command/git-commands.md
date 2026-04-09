@@ -189,3 +189,31 @@
 - Expected output: Remote updated.
 - Actual result: Success, `b8c5e58..7e6fff9` pushed.
 - Notes: G3 step 3 complete.
+
+27.
+- Command: `git status --short`
+- Purpose: Verify pending changes before publishing Jira sample/board-specific variant artifacts.
+- Expected output: Modified and new files listed.
+- Actual result: Pending execution.
+- Notes: Pre-commit validation for this batch.
+
+28.
+- Command: `git add docs/jira/jira-export-sample.csv docs/jira/jira-import-board-specific.csv docs/jira/README.md README.md`
+- Purpose: Stage Jira sample and board-specific variant with documentation links.
+- Expected output: No output on success.
+- Actual result: Pending execution.
+- Notes: Atomic publish prep for Jira artifacts.
+
+29.
+- Command: `git commit -m "docs: add synthetic jira export sample and board-specific csv | why: enable board-tailored imports without requiring user-provided sample"`
+- Purpose: Publish sample and board-specific CSV deliverables.
+- Expected output: Commit hash and file summary.
+- Actual result: Pending execution.
+- Notes: Commit message includes why rationale.
+
+30.
+- Command: `git push origin master`
+- Purpose: Publish Jira sample/board-specific commit.
+- Expected output: Remote branch updated.
+- Actual result: Pending execution.
+- Notes: Required by standing instructions.
