@@ -56,3 +56,31 @@
 - Expected output: Includes dbt, snowflake, and other stack-specific command logs.
 - Actual result: Success, expected list confirmed.
 - Notes: Used to verify scaffolding completeness.
+
+8.
+- Command: `mkdir -p docs/planning docs/jira`
+- Purpose: Create planning and Jira artifact folders.
+- Expected output: Directories created or already present.
+- Actual result: Success.
+- Notes: Batch G3 artifact preparation.
+
+9.
+- Command: `mkdir -p src/... infra/... tests/... && find ... -type d`
+- Purpose: Create implementation scaffold directories across ingestion, dbt, ML, app, observability, infra, and test layers.
+- Expected output: Full scaffold directory tree present.
+- Actual result: Success, directory structure verified.
+- Notes: Exact paths created per project stack.
+
+10.
+- Command: `find src infra tests -type d -empty -exec touch {}/.gitkeep \;`
+- Purpose: Ensure empty scaffold directories are tracked by git.
+- Expected output: `.gitkeep` files created in empty directories.
+- Actual result: Success.
+- Notes: Preserves scaffold in repository history.
+
+11.
+- Command: `find docs/planning -maxdepth 2 -type f | sort`
+- Purpose: Validate planning deliverables were created.
+- Expected output: `master-backlog.md` and `project-scaffold.md` listed.
+- Actual result: Success.
+- Notes: Validation for planning artifact completeness.

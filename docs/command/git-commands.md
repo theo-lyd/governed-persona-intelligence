@@ -126,3 +126,66 @@
 - Expected output: Remote branch updated.
 - Actual result: Success, remote updated `master -> master`.
 - Notes: Required by repository standing instructions.
+
+18.
+- Command: `git add docs/planning/master-backlog.md README.md`
+- Purpose: Stage master backlog artifact and README link.
+- Expected output: No output on success.
+- Actual result: Success.
+- Notes: G3 step 1 publish prep.
+
+19.
+- Command: `git commit -m "docs: add execution-ready master backlog | why: provide sprint ownership and point-based delivery plan"`
+- Purpose: Publish backlog deliverable.
+- Expected output: Commit created with backlog files.
+- Actual result: Success, commit `c29b9d0` created.
+- Notes: Atomic commit includes why rationale.
+
+20.
+- Command: `git push origin master`
+- Purpose: Publish backlog commit.
+- Expected output: Remote updated.
+- Actual result: Success, `e234ce8..c29b9d0` pushed.
+- Notes: G3 step 1 complete.
+
+21.
+- Command: `git add docs/jira/jira-import.csv docs/jira/README.md README.md`
+- Purpose: Stage Jira import artifacts and README links.
+- Expected output: No output on success.
+- Actual result: Success.
+- Notes: G3 step 2 publish prep.
+
+22.
+- Command: `git commit -m "docs: add jira import package for backlog execution | why: accelerate board onboarding with epic and sprint mapping"`
+- Purpose: Publish Jira deliverable.
+- Expected output: Commit created with CSV and notes.
+- Actual result: Success, commit `b8c5e58` created.
+- Notes: Atomic commit includes why rationale.
+
+23.
+- Command: `git push origin master`
+- Purpose: Publish Jira commit.
+- Expected output: Remote updated.
+- Actual result: Success, `c29b9d0..b8c5e58` pushed.
+- Notes: G3 step 2 complete.
+
+24.
+- Command: `git add docs/planning/project-scaffold.md README.md src infra scripts tests`
+- Purpose: Stage scaffold structure and planning guide.
+- Expected output: No output on success.
+- Actual result: Success.
+- Notes: G3 step 3 publish prep.
+
+25.
+- Command: `git commit -m "chore: add implementation project scaffold structure | why: accelerate phase execution with standardized workspace layout"`
+- Purpose: Publish scaffold deliverable.
+- Expected output: Commit created with new scaffold files.
+- Actual result: Success, commit `7e6fff9` created.
+- Notes: Atomic commit includes why rationale.
+
+26.
+- Command: `git push origin master`
+- Purpose: Publish scaffold commit.
+- Expected output: Remote updated.
+- Actual result: Success, `b8c5e58..7e6fff9` pushed.
+- Notes: G3 step 3 complete.
