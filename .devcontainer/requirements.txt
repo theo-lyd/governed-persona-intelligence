@@ -1,0 +1,12 @@
+snowflake-cli
+snowflake-snowpark-python[pandas]
+snowflake-ml-python
+snowflake-connector-python
+
+dbt-core
+dbt-snowflake
+
+pandas
+numpy
+scikit-learn
+pyarrow
