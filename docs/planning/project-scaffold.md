@@ -6,7 +6,7 @@ This scaffold provides a production-oriented starting layout aligned to the road
 ## Top-Level Structure
 - `src/ingestion/airbyte`: connector specs and sync contracts
 - `src/orchestration/airflow`: DAG definitions and orchestration helpers
-- `src/transformation/dbt`: dbt models, macros, snapshots, and tests
+- `dbt`: canonical dbt projects (for example `dbt/phase0`) with models, macros, snapshots, and tests
 - `src/ml/snowpark`: feature engineering, model training, and registry integration
 - `src/ai/cortex`: prompt templates and SQL-based narrative workflows
 - `src/app/streamlit`: Persona Consultant app code and UI components

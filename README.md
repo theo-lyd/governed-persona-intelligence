@@ -30,6 +30,7 @@ See the production delivery plan in [docs/implementation-roadmap.md](docs/implem
 - Service access pattern: [docs/security/service-access-pattern.md](docs/security/service-access-pattern.md)
 - Snowflake parameter sheet (DEV/TEST/PROD + CI): [docs/security/snowflake-parameter-sheet.md](docs/security/snowflake-parameter-sheet.md)
 - Snowflake connection retrospective (Phase 0): [docs/security/snowflake-connection-retrospective-phase0.md](docs/security/snowflake-connection-retrospective-phase0.md)
+- Phase I live activation runbook: [docs/security/phase1-live-activation-runbook.md](docs/security/phase1-live-activation-runbook.md)
 - Workspace novice setup guide: [docs/security/guides/workspace-novice-setup.md](docs/security/guides/workspace-novice-setup.md)
 
 ## Command Logs

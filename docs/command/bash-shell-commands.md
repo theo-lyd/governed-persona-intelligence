@@ -294,3 +294,10 @@
 - Expected output: Tag accepted as a prerelease semantic version.
 - Actual result: Success.
 - Notes: Confirms the release tag validator accepts the documented format.
+
+38.
+- Command: `python -m pytest -q tests/unit/test_phase0_ci_policy.py tests/unit/test_phase1_ingestion_contracts.py tests/unit/test_phase1_ingestion_i1b.py tests/unit/test_phase1_ingestion_i1c.py`
+- Purpose: Run regression tests after canonical dbt-path cleanup and live-activation runbook additions.
+- Expected output: All selected test modules pass.
+- Actual result: Success, `11 passed`.
+- Notes: Confirms cleanup did not regress Phase 0/Phase I validation behavior.
