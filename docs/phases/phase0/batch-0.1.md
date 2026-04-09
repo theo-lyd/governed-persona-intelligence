@@ -4,48 +4,76 @@
 - Phase: 0
 - Batch: 0.1
 - Title: Environment and Access Baseline
-- Status: Planned
+- Status: In Progress
 
 ## Technical Report
 ### What
-- Define technical deliverables completed for this batch.
+- Implemented Snowflake provisioning scaffolding for environment databases, schemas, warehouses, resource monitors, roles, and role grants.
+- Implemented service user and service-role binding scripts for Airbyte, Airflow, and dbt.
+- Implemented `.devcontainer` baseline with Snowflake CLI, dbt-snowflake, and Snowpark dependencies.
+- Added security templates and access-matrix validation scripts.
 
 ### How
-- Document implementation steps, tools, commands, and validation path.
+- Added SQL scripts under `infra/snowflake/` for deterministic provisioning and grant management.
+- Added containerized developer baseline in `.devcontainer/` with pinned dependency manifest.
+- Added script-driven access verification in `scripts/security/` to produce auditable matrix outputs.
+- Added governance docs in `docs/security/` and non-secret env template in `.env.example`.
 
 ### Why
-- Choice:
-- Alternatives considered:
-- Rationale:
-- Trade-offs:
-- Reconsideration trigger:
+- Choice: SQL-first infrastructure scripts and role-based least-privilege model.
+- Alternatives considered: manual UI provisioning and shared admin role access.
+- Rationale: SQL scripts are auditable, repeatable, and enforce environment separation.
+- Trade-offs: upfront setup effort is higher than manual setup, but long-term governance is stronger.
+- Reconsideration trigger: move to declarative Terraform provider when infrastructure maturity requires centralized multi-account management.
 
 ### Output
 - Code/data artifacts produced:
+	- `infra/snowflake/databases/01_databases.sql`
+	- `infra/snowflake/schemas/01_schemas.sql`
+	- `infra/snowflake/warehouses/01_warehouses.sql`
+	- `infra/snowflake/resource_monitors/01_resource_monitors.sql`
+	- `infra/snowflake/roles/01_roles.sql`
+	- `infra/snowflake/roles/02_role_grants.sql`
+	- `infra/snowflake/security/01_service_users.sql`
+	- `infra/snowflake/security/02_service_role_grants.sql`
+	- `.devcontainer/*`
+	- `docs/security/*`
+	- `scripts/security/*`
 - Test and validation evidence:
+	- Access-matrix validation scripts prepared; execution pending Snowflake credentials and account bindings.
 - Quality gate result:
+	- Partially met: policy and scaffolding complete, runtime validation pending secure credentials.
 
 ## Non-Technical and Business Report
 ### What
-- Business capability delivered by this batch.
+- Established governance baseline for secure, controlled Snowflake operations before data onboarding.
 
 ### How
-- Process, stakeholder engagement, and rollout approach.
+- Implemented environment boundaries (dev/test/prod), service-level access model, and spend controls.
+- Prepared evidence-generation scripts for platform/security sign-off.
 
 ### Why
-- Business rationale for chosen approach.
-- Alternatives and commercial trade-offs.
+- Business rationale for chosen approach:
+	- Prevents over-privileged access and reduces risk before production data flows begin.
+	- Enables reliable, auditable onboarding for marketing-critical analytics.
+- Alternatives and commercial trade-offs:
+	- Fast manual setup is cheaper initially but increases operational and compliance risk.
 
 ### Output
 - Expected business impact:
+	- Reduced security and compliance risk during rollout.
+	- Better confidence in platform controls for downstream ML/AI phases.
 - Adoption and operational outcome:
+	- Engineering teams can now onboard with consistent toolchain and role model.
 - Risks and mitigations:
+	- Risk: credentials and account bindings not yet provisioned.
+	- Mitigation: explicit secrets and access runbook added in `docs/security/`.
 
 ## Batch Completion Checklist
-- [ ] Scope and objectives announced
-- [ ] User approval received before execution
-- [ ] Atomic commit completed
-- [ ] Commit pushed
+- [x] Scope and objectives announced
+- [x] User approval received before execution
+- [x] Atomic commit completed
+- [x] Commit pushed
 - [ ] Command logs updated
 - [ ] Issues log updated
 - [ ] Acceptance criteria verified

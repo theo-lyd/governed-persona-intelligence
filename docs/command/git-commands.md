@@ -273,3 +273,73 @@
 - Expected output: Remote branch updated.
 - Actual result: Success, remote updated `01c47cc..51cddcf`.
 - Notes: Required by standing instructions.
+
+39.
+- Command: `git add infra/snowflake`
+- Purpose: Stage Snowflake provisioning scripts for Batch 0.1A commit 1.
+- Expected output: No output on success.
+- Actual result: Success.
+- Notes: Includes DB/schema/warehouse/monitor/RBAC/service-user scaffolding.
+
+40.
+- Command: `git commit -m "infra: scaffold snowflake env/rbac provisioning sql | why: enforce env isolation and least-privilege baseline for phase 0"`
+- Purpose: Publish Batch 0.1A commit 1.
+- Expected output: Commit hash and changed files summary.
+- Actual result: Success, commit `100e914` created.
+- Notes: Atomic commit includes why rationale.
+
+41.
+- Command: `git push origin master`
+- Purpose: Publish Batch 0.1A commit 1.
+- Expected output: Remote branch updated.
+- Actual result: Success, remote updated `2992913..100e914`.
+- Notes: Commit 1 published.
+
+42.
+- Command: `git add .devcontainer`
+- Purpose: Stage devcontainer baseline for Batch 0.1A commit 2.
+- Expected output: No output on success.
+- Actual result: Success.
+- Notes: Includes Dockerfile, devcontainer config, requirements, and post-create script.
+
+43.
+- Command: `git commit -m "build: add phase0 devcontainer baseline | why: standardize local tooling for snowflake, dbt, and snowpark"`
+- Purpose: Publish Batch 0.1A commit 2.
+- Expected output: Commit hash and changed files summary.
+- Actual result: Success, commit `297727b` created.
+- Notes: Atomic commit includes why rationale.
+
+44.
+- Command: `git push origin master`
+- Purpose: Publish Batch 0.1A commit 2.
+- Expected output: Remote branch updated.
+- Actual result: Success, remote updated `100e914..297727b`.
+- Notes: Commit 2 published.
+
+45.
+- Command: `git status --short`
+- Purpose: Verify pending changes before publishing Batch 0.1A commit 3.
+- Expected output: Modified/new files listed.
+- Actual result: Pending execution.
+- Notes: Pre-commit validation.
+
+46.
+- Command: `git add .env.example docs/security scripts/security docs/phases/phase0/batch-0.1.md docs/issues-encountered/phase-0-issues.md README.md docs/command/git-commands.md docs/command/bash-shell-commands.md`
+- Purpose: Stage security/access templates, validation scripts, and phase report updates.
+- Expected output: No output on success.
+- Actual result: Pending execution.
+- Notes: Batch 0.1A commit 3 payload.
+
+47.
+- Command: `git commit -m "docs: add phase0 security baseline and validation scaffolding | why: operationalize least-privilege and access evidence workflow"`
+- Purpose: Publish Batch 0.1A commit 3.
+- Expected output: Commit hash and changed files summary.
+- Actual result: Pending execution.
+- Notes: Atomic commit includes why rationale.
+
+48.
+- Command: `git push origin master`
+- Purpose: Publish Batch 0.1A commit 3.
+- Expected output: Remote branch updated.
+- Actual result: Pending execution.
+- Notes: Required by standing instructions.

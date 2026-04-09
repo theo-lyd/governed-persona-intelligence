@@ -147,3 +147,38 @@
 - Expected output: Sprint backlog includes blueprint-driven execution tasks.
 - Actual result: Success.
 - Notes: Ensures business blueprint becomes actionable execution scope.
+
+21.
+- Command: `find infra/snowflake -maxdepth 3 -type f | sort`
+- Purpose: Inspect existing Snowflake scaffold prior to Batch 0.1A implementation.
+- Expected output: Baseline files listed.
+- Actual result: Success.
+- Notes: Used for chunk 0.1.1 planning.
+
+22.
+- Command: `create_file` and `apply_patch` operations under `infra/snowflake/`
+- Purpose: Add SQL provisioning scripts for databases, schemas, warehouses, resource monitors, roles, grants, and service users.
+- Expected output: Deterministic provisioning assets created.
+- Actual result: Success.
+- Notes: Implements Batch 0.1A Chunk 0.1.1.
+
+23.
+- Command: `chmod +x .devcontainer/postCreate.sh`
+- Purpose: Make devcontainer post-create bootstrap script executable.
+- Expected output: Script mode updated to executable.
+- Actual result: Success.
+- Notes: Required for automatic post-create execution.
+
+24.
+- Command: `create_file` operations under `.devcontainer/`
+- Purpose: Add devcontainer Dockerfile, config, dependency manifest, and bootstrap script.
+- Expected output: Reproducible Codespaces environment baseline.
+- Actual result: Success.
+- Notes: Implements Batch 0.1A Chunk 0.1.2.
+
+25.
+- Command: `create_file` operations under `docs/security/` and `scripts/security/`
+- Purpose: Add secrets management policy, service access pattern, and access-matrix validation scripts.
+- Expected output: Security baseline and validation workflow scaffolding.
+- Actual result: Success.
+- Notes: Implements Batch 0.1A Chunk 0.1.3 baseline.
