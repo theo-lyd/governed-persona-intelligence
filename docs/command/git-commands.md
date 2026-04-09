@@ -103,26 +103,26 @@
 - Command: `git status --short`
 - Purpose: Review correction batch changes before commit.
 - Expected output: Modified and added files listed.
-- Actual result: Pending execution.
+- Actual result: Success, modified and newly created command log files listed.
 - Notes: Pre-commit verification for this batch.
 
 15.
 - Command: `git add -A`
 - Purpose: Stage renamed and newly created command logs plus index updates.
 - Expected output: No output on success.
-- Actual result: Pending execution.
+- Actual result: Success, all changes staged.
 - Notes: Includes README and standing instruction updates.
 
 16.
 - Command: `git commit -m "docs: rename dbt command log and add snowflake command logs | why: align command documentation with actual project stack"`
 - Purpose: Publish this correction batch as an atomic documentation change.
 - Expected output: Commit hash and file summary.
-- Actual result: Pending execution.
+- Actual result: Success, commit `ade9065` created.
 - Notes: Commit message includes why rationale.
 
 17.
 - Command: `git push origin master`
 - Purpose: Publish this correction batch to remote.
 - Expected output: Remote branch updated.
-- Actual result: Pending execution.
+- Actual result: Success, remote updated `master -> master`.
 - Notes: Required by repository standing instructions.
