@@ -495,12 +495,12 @@
 - Command: `git commit -m "docs: add phase0 retrospective and safety summary | why: preserve failure-to-resolution lessons and codify preventive controls"`
 - Purpose: Publish consolidated Phase 0 learning and safety documentation.
 - Expected output: Commit hash and changed files summary.
-- Actual result: Pending.
+- Actual result: Success, commit `abbf8cd` created with 4 files changed.
 - Notes: Commit message follows required why rationale format.
 
 71.
 - Command: `git push origin master`
 - Purpose: Publish the retrospective and safety summary commit.
 - Expected output: Remote branch updated.
-- Actual result: Pending.
+- Actual result: Success, remote updated `18f1613..abbf8cd`.
 - Notes: Required by standing instructions.
