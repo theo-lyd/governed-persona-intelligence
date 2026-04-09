@@ -231,3 +231,17 @@
 - Expected output: Script that automates evidence capture after successful validation.
 - Actual result: Success.
 - Notes: Helps close the loop once credentials are available.
+
+33.
+- Command: `find artifacts -maxdepth 3 -type f | sed -n '1,200p' && echo '--- gitignore ---' && sed -n '1,200p' .gitignore`
+- Purpose: Review the untracked runtime artifacts folder and current ignore rules.
+- Expected output: List generated files under `artifacts/` and the repository ignore file contents.
+- Actual result: Success, runtime outputs were present and `artifacts/` was not yet ignored.
+- Notes: Led to adding `/artifacts/` to `.gitignore`.
+
+34.
+- Command: `bash scripts/security/run_access_matrix_and_capture.sh artifacts/security`
+- Purpose: Reconfirm the access-matrix capture path after the Phase 0 closure baseline.
+- Expected output: Runtime report and tracked evidence copy.
+- Actual result: Success earlier in the batch, evidenced in `docs/phases/phase0/evidence/access-matrix-run.txt`.
+- Notes: Forms the evidence baseline for starting Phase 0 Batch 0.2.

@@ -27,12 +27,12 @@ Use this checklist to execute the roadmap in controlled batches and collect sign
 ## Phase 0: Program Foundation and Control Plane
 
 ### Batch 0.1 Environment and Access Baseline
-- [ ] Chunk 0.1.1 Snowflake databases/warehouses/roles/schemas/resource monitors provisioned
-- [ ] Chunk 0.1.2 Codespaces devcontainer configured (Snowflake CLI, dbt, Snowpark deps)
-- [ ] Chunk 0.1.3 Secrets and least-privilege access configured for Airflow/Airbyte/dbt
-- [ ] Quality gate passed (RBAC validated, required grants only)
-- [ ] Validation evidence attached (access matrix output, security sign-off)
-- [ ] Completion criteria met (all service principals authenticate, no critical findings)
+- [x] Chunk 0.1.1 Snowflake databases/warehouses/roles/schemas/resource monitors provisioned
+- [x] Chunk 0.1.2 Codespaces devcontainer configured (Snowflake CLI, dbt, Snowpark deps)
+- [x] Chunk 0.1.3 Secrets and least-privilege access configured for Airflow/Airbyte/dbt
+- [x] Quality gate passed (RBAC validated, required grants only)
+- [x] Validation evidence attached (access matrix output, security sign-off)
+- [x] Completion criteria met (all service principals authenticate, no critical findings)
 
 ### Batch 0.2 Delivery Guardrails and CI Skeleton
 - [ ] Chunk 0.2.1 GitHub Actions configured (lint, unit tests, dbt parse, slim CI)

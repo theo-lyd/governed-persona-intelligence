@@ -43,6 +43,27 @@
 - Actual result: Success, remote updated `bc4454f..2ee2ec5`.
 - Notes: Required by standing instructions.
 
+61.
+- Command: `git status --short`
+- Purpose: Inspect the untracked runtime artifacts folder after Phase 0 evidence capture.
+- Expected output: Generated files listed under `artifacts/`.
+- Actual result: Success, `?? artifacts/` present.
+- Notes: Confirmed the folder contains runtime outputs only.
+
+62.
+- Command: `git commit -m "docs: close phase 0 access baseline | why: capture validated Snowflake evidence and remove blocker notes"`
+- Purpose: Publish the Phase 0 closure and evidence updates.
+- Expected output: Atomic commit with phase closure documentation.
+- Actual result: Success, commit `1213dc0` created.
+- Notes: Commit included the final access-matrix evidence and reports.
+
+63.
+- Command: `git push origin master`
+- Purpose: Publish the final Phase 0 closure updates.
+- Expected output: Remote branch updated.
+- Actual result: Success, `master` updated to `1213dc0`.
+- Notes: Final publish step for the closure batch.
+
 2.
 - Command: `git branch --show-current`
 - Purpose: Confirm active branch for batch publishing.
